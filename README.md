@@ -4,30 +4,30 @@ A simple web app that lets users create, track, and complete daily challenges. I
 
 Overview
 
-Daily Challenge Tracker helps users build small, repeatable habits.
-Users can:
-	•	Add daily challenges (e.g. “10k steps”, “Read 10 pages”) (ncie to have: display max string length)
-	•	See all active challenges in one list.
-	•	Mark challenges as done.
-	•	Review recent completion history for motivation.
+Daily Challenge Tracker helps users build small, repeatable habits. <br>
+Users can: <br>
+	•	Add daily challenges (e.g. “10k steps”, “Read 10 pages”) (nice to have: display max string length) <br>
+	•	See all active challenges in one list. <br>
+	•	Mark challenges as done. <br>
+	•	Review recent completion history for motivation. <br>
 
 Features
-	•	User registration and login (private challenge lists).
-	•	Create, read, update, and delete challenges (full CRUD).
-	•	“Main” view to quickly mark challenges as done.
-	•	Simple progress feedback (e.g. streaks or completion count).
+	•	User registration and login (private challenge lists).<br>
+	•	Create, read, update, and delete challenges (full CRUD).<br>
+	•	“Main” view to quickly mark challenges as done.<br>
+	•	Simple progress feedback (e.g. streaks or completion count).<br>
 
 Tech Used
-	•	Python, Django
-	•	HTML, CSS, JavaScript
-	•	Bootstrap
-	•	PostgreSQL
-	•	Git, GitHub, Heroku
+	•	Python, Django <br>
+	•	HTML, CSS, JavaScript <br>
+	•	Bootstrap <br>
+	•	PostgreSQL <br>
+	•	Git, GitHub, Heroku <br>
 
 Deployment
 
-The project is deployed via Heroku, using a PostgreSQL database.
+The project is deployed via Heroku, using a PostgreSQL database. <br>
 
 
-Credits
+Credits <br>
 Built as the Capstone Project for the Code Institute Full Stack Development course Dec 2025, with support from official Django documentation and CI tutors.
