@@ -1,12 +1,12 @@
-Daily Challenge Tracker
+Personal Challenge Tracker
 
-A simple web app that lets users create, track, and complete daily challenges. It focuses on a clean, mobile-first interface so people can quickly see today’s challenges, mark them as done, and get a sense of progress over time.
+A simple web app that lets users create, track, and complete personal challenges. It focuses on a clean, mobile-first interface so people can quickly see their challenges, mark them as done, and get a sense of progress over time.
 
 Overview
 
-Daily Challenge Tracker helps users build small, repeatable habits. <br>
+Personal Challenge Tracker helps users build small, repeatable habits. <br>
 Users can: <br>
-	•	Add daily challenges (e.g. “10k steps”, “Read 10 pages”) (nice to have: display max string length) <br>
+	•	Add personal challenges (e.g. “10k steps”, “Read 10 pages”) (nice to have: display max string length) <br>
 	•	See all active challenges in one list. <br>
 	•	Mark challenges as done. <br>
 	•	Review recent completion history for motivation. <br>
