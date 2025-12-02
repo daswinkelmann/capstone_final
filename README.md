@@ -31,7 +31,7 @@ _A simple web app that lets users create, track, and complete personal challenge
 
 ---
 
-<summary> # 2. UX Design Process</summary>
+# 2. UX Design Process
 
 <details>
 <summary><strong>User Stories</strong></summary>
