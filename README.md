@@ -6,28 +6,27 @@ Overview
 
 Personal Challenge Tracker helps users build small, repeatable habits. <br>
 Users can: <br>
-	•	Add personal challenges (e.g. “10k steps”, “Read 10 pages”) (nice to have: display max string length) <br>
-	•	See all active challenges in one list. <br>
-	•	Mark challenges as done. <br>
-	•	Review recent completion history for motivation. <br>
+• Add personal challenges (e.g. “10k steps”, “Read 10 pages”) (nice to have: display max string length) <br>
+• See all active challenges in one list. <br>
+• Mark challenges as done. <br>
+• Review recent completion history for motivation. <br>
 
-Features
-	•	User registration and login (private challenge lists).<br>
-	•	Create, read, update, and delete challenges (full CRUD).<br>
-	•	“Main” view to quickly mark challenges as done.<br>
-	•	Simple progress feedback (e.g. streaks or completion count).<br>
+Features <br>
+• User registration and login (private challenge lists).<br>
+• Create, read, update, and delete challenges (full CRUD).<br>
+• “Main” view to quickly mark challenges as done.<br>
+• Simple progress feedback (e.g. streaks or completion count).<br>
 
-Tech Used
-	•	Python, Django <br>
-	•	HTML, CSS, JavaScript <br>
-	•	Bootstrap <br>
-	•	PostgreSQL <br>
-	•	Git, GitHub, Heroku <br>
+Tech Used <br>
+• Python, Django <br>
+• HTML, CSS, JavaScript <br>
+• Bootstrap <br>
+• PostgreSQL <br>
+• Git, GitHub, Heroku <br>
 
 Deployment
 
 The project is deployed via Heroku, using a PostgreSQL database. <br>
-
 
 Credits <br>
 Built as the Capstone Project for the Code Institute Full Stack Development course Dec 2025, with support from official Django documentation and CI tutors.
