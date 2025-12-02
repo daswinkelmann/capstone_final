@@ -132,6 +132,57 @@ _(MVP features)_
 
 _Future features list_
 
+**Progressive Web App (PWA) User Stories**
+
+PWA - install on a phone to seem like a native app
+As a user, I want to install the app on my phone home screen so that it feels like a native mobile app. Acceptance criteria: The app provides a valid manifest file, displays an install prompt on supported devices, and launches in standalone mode when opened from the home screen.
+
+PWA 2/2 - App to load on a phone even with no internet connection
+As a user, I want the app to load even when my internet connection is unstable so that I can always access my task list. Acceptance criteria: Core app pages and static assets are cached by a service worker and load successfully when offline.
+
+
+**Future / Nice-to-Have User Stories**
+
+Nice-to-Have - filter by status
+As a user, I want to filter tasks by status so that I can focus only on tasks that are still to be completed.
+Acceptance Criteria
+Users can select a filter option (e.g., All, Completed, Not Completed) and the task list updates instantly to show only matching tasks.
+When a filter is active, the UI clearly indicates which filter is applied.
+
+
+Nice to have - add due dates
+As a user, I want to add due dates to tasks so that I can manage deadlines more effectively.
+Acceptance Criteria
+When creating or editing a task, users can select a due date using a date picker.
+Tasks with due dates display that date clearly in the task list.
+
+
+
+Nice to have - organise into preset categories
+As a user, I want to organise tasks into preset categories so that my task list feels structured.
+Acceptance Criteria
+Users can choose from a predefined list of categories (e.g., Health, School, Work) when creating or editing a task.
+
+The task list displays each task’s assigned category.
+
+
+Nice to have - streaks
+As a user, I want to track streaks or completion goals so that I stay motivated.
+Acceptance Criteria
+Completing tasks on consecutive days increases a visible “streak” counter.
+The streak counter resets automatically if the user does not complete any tasks in a 24-hour period.
+
+
+Nice to have - export/backup tasks
+As a user, I want to export my tasks so that I can back them up or use them elsewhere.
+Acceptance Criteria
+Users can tap an “Export” button to download a file (CSV or text) containing all their tasks and statuses.
+Exported files include at minimum: task title, status, category, and due date (if used).
+
+
+
+
+
 </details>
 
 ---
