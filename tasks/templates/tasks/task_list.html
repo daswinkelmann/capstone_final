@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-{% comment %} THIS IS TAKEN FROM CODESTAR - CHANGE BLOG TO TASKS AND POST TO TASK {% endcomment %}
+{% comment %} THIS IS TAKEN FROM CODESTAR - CHANGE BLOG TO TASKS AND POST TO
+TASK {% endcomment %}
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Views Part 1</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Views Part 1</title>
-</head>
-
-<body>
-    <h1>Posts list</h1>
-    {% for post in object_list %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.excerpt}}</p>
-    <p>Author: {{post.author}}</p>
-    {% endfor %}
-</body>
-
+    <body>
+        <h1>Task list</h1>
+        {% for post in object_list %}
+        <h2>{{post.title}}</h2>
+        <p>{{post.excerpt}}</p>
+        <p>Priority: {{task.priority}}</p>
+        {% endfor %}
+    </body>
 </html>
