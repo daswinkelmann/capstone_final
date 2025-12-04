@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Task
 from .forms import TaskForm
@@ -13,9 +13,13 @@ class TaskList(generic.ListView):
 
 
 
-
-
 def add_task(request):
-    form = TaskForm()
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if comment_form.is_valid() and comment.author == request.user:
+            comment.save()
+
+    else:    
+        form = TaskForm()
     return render(request, "tasks/add_task.html", {"form": form})
 
