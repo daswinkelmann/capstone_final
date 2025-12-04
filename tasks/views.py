@@ -15,3 +15,5 @@ class TaskCreate(generic.View):
     def get(self, request):
         form = TaskForm()
         return render(request, "tasks/add_task.html", {"form": form})    
+    
+    ...
