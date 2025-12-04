@@ -11,9 +11,11 @@ class TaskList(generic.ListView):
     context_object_name = "task_list"
     paginate_by = 6
 
-class TaskCreate(generic.View):
-    def get(self, request):
-        form = TaskForm()
-        return render(request, "tasks/add_task.html", {"form": form})    
-    
-    ...
+
+
+
+
+def add_task(request):
+    form = TaskForm()
+    return render(request, "tasks/add_task.html", {"form": form})
+
