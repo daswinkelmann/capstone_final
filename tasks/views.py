@@ -9,17 +9,19 @@ class TaskList(generic.ListView):
     queryset = Task.objects.all()
     template_name = "tasks/index.html"
     context_object_name = "task_list"
-    paginate_by = 6
+    paginate_by = 4
 
 
 
 def add_task(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
-        if comment_form.is_valid() and comment.author == request.user:
-            comment.save()
-
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.user = request.user
+            task.save()
+            return redirect("home")
     else:    
         form = TaskForm()
-    return render(request, "tasks/add_task.html", {"form": form})
 
+    return render(request, "tasks/add_task.html", {"form": form})
