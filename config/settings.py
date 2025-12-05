@@ -34,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
+# ADDED TO SEND NON USERS TO LOGIN PAGE
+LOGIN_URL = '/admin/login/'
+
 
 # Application definition
 

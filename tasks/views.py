@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from .models import Task
 from .forms import TaskForm
@@ -12,7 +13,7 @@ class TaskList(generic.ListView):
     paginate_by = 4
 
 
-
+@login_required
 def add_task(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
@@ -25,3 +26,4 @@ def add_task(request):
         form = TaskForm()
 
     return render(request, "tasks/add_task.html", {"form": form})
+
