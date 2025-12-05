@@ -89,15 +89,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
-print("DATABASE_URL env:", os.environ.get("DATABASE_URL"))
+# print("DATABASE_URL env:", os.environ.get("DATABASE_URL"))
 
 DATABASES = {
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        ssl_require=True,
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 # THIS WAS TAKEN DIRECTLY FROM CODESTAR
 CSRF_TRUSTED_ORIGINS = [
