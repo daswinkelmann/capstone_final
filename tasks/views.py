@@ -1,18 +1,24 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from .models import Task
 from .forms import TaskForm
 
 # Create your views here.
 class TaskList(generic.ListView):
-    model = Task
+    # model = Task
     # queryset = Task.objects.all()
     template_name = "tasks/index.html"
     context_object_name = "task_list"
     paginate_by = 4
-    ordering = ['-created_at']
+    # ordering = ['-created_at']
 
+    def get_queryset(self):
+        # return Task.objects.filter(status="TODO").order_by("created_at")
+        todos = Task.objects.filter(user=self.request.user, status="TODO").order_by("-created_at")
+        dones = Task.objects.filter(user=self.request.user, status="DONE").order_by("-created_at")
+        return list(todos) + list(dones)
 
 @login_required
 def add_task(request):
@@ -28,3 +34,10 @@ def add_task(request):
 
     return render(request, "tasks/add_task.html", {"form": form})
 
+
+@login_required
+def task_done(request, pk):
+    task = get_object_or_404(Task, pk=pk, user=request.user)
+    task.status = "DONE"
+    task.save()
+    return redirect("home")
