@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
@@ -15,24 +15,42 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% comment %} <div class="image-flash">
+                                <div class="image-flash">
                                     <p class="author">Task:</p>
-                                </div> {% endcomment %}
+                                </div>
                             </div>
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ task.title }}</h2>
                             </a>
                             {% if mode == "read" %}
-                                <form action="{% url 'task_done' task.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-sm btn-success mt-2">DONE</button>
-                                </form>
+                            <form
+                                action="{% url 'task_done' task.id %}"
+                                method="POST"
+                            >
+                                {% csrf_token %}
+                                <button
+                                    type="submit"
+                                    class="btn btn-sm btn-success mt-2"
+                                >
+                                    DONE
+                                </button>
+                            </form>
                             {% elif mode == "manage" %}
-                                <div class="d-flex justify-content-between mt-2">
-                                    <button type="button" class="btn btn-sm btn-outline-success">✏️ EDIT</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger">❌ Delete</button>
-                                </div>
-                            {% endif %} 
+                            <div class="d-flex justify-content-between mt-2">
+                                <a
+                                    href="{% url 'edit_task' task.id %}"
+                                    class="btn btn-sm btn-outline-success"
+                                    >✏️ EDIT</a
+                                >
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline-danger btn-delete"
+                                    data-task-id="{{ task.id }}"
+                                >
+                                    ❌ DELETE
+                                </button>
+                            </div>
+                            {% endif %}
                             <hr />
                             <p class="card-text text-muted h6">
                                 {{ task.created_at}}
@@ -67,5 +85,47 @@
     </div>
 </div>
 
+<!-- Delete confirmation modal -->
+<div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">
+                    Delete comment?
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment? This action cannot
+                be undone.
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- index.html content ends here -->
+
+{% endblock content %} {% block extras %}
+<script src="{% static 'js/tasks.js' %}"></script>
 {% endblock %}

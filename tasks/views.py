@@ -47,3 +47,18 @@ def task_done(request, pk):
     task.status = "DONE"
     task.save()
     return redirect("home")
+
+@login_required
+def edit_task(request, pk):
+    task = get_object_or_404(Task, pk=pk, user=request.user)
+    # temp
+    return render(request, "tasks/edit_task.html", {"task": task})
+
+@login_required
+def delete_task(request, pk):
+    task = get_object_or_404(Task, pk=pk, user=request.user)
+    task.delete()
+    return redirect("home")
+    
+    # First visit (GET): show confirmation page
+    return render(request, "tasks/delete_task.html", {"task": task})
