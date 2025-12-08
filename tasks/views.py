@@ -19,6 +19,12 @@ class TaskList(generic.ListView):
         todos = Task.objects.filter(user=self.request.user, status="TODO").order_by("-created_at")
         dones = Task.objects.filter(user=self.request.user, status="DONE").order_by("-created_at")
         return list(todos) + list(dones)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mode = self.request.GET.get("mode", "read")  # "read" or "manage"
+        context["mode"] = mode
+        return context
 
 @login_required
 def add_task(request):
