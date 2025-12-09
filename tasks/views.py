@@ -51,8 +51,18 @@ def task_done(request, pk):
 @login_required
 def edit_task(request, pk):
     task = get_object_or_404(Task, pk=pk, user=request.user)
-    # temp
-    return render(request, "tasks/edit_task.html", {"task": task})
+   
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            edited_task = form.save(commit=False)
+            edited_task.user = request.user
+            edited_task.save()
+            return redirect("home")
+    else:
+        form = TaskForm(instance=task)
+
+    return render(request, "tasks/edit_task.html", {"form": form})
 
 @login_required
 def delete_task(request, pk):
