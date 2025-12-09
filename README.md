@@ -73,9 +73,11 @@ Note: this project is designed as a mobile first app. Desktop and tablet are nic
 
 **Tablet Wireframes**
 ![alt text](<iPad wireframes.png>)
+![alt text](<iPad wireframes_V2.png>)
 
 **Desktop Wireframes**
 ![alt text](<laptop wireframes.png>)
+![alt text](<laptop wireframes_V2.png>)
 
 </details>
 
