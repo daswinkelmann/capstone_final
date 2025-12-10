@@ -14,12 +14,28 @@ class TaskList(generic.ListView):
     paginate_by = 4
     # ordering = ['-created_at']
 
+    # ORIGINAL TASKLIST QUERYSET
+    # def get_queryset(self):
+    #     # return Task.objects.filter(status="TODO").order_by("created_at")
+    #     todos = Task.objects.filter(user=self.request.user, status="TODO").order_by("-created_at")
+    #     dones = Task.objects.filter(user=self.request.user, status="DONE").order_by("-created_at")
+    #     return list(todos) + list(dones)
+
     def get_queryset(self):
-        # return Task.objects.filter(status="TODO").order_by("created_at")
-        todos = Task.objects.filter(user=self.request.user, status="TODO").order_by("-created_at")
-        dones = Task.objects.filter(user=self.request.user, status="DONE").order_by("-created_at")
+        user = self.request.user
+        # If not logged in, show empty list
+        if not user.is_authenticated:
+            return Task.objects.none()
+        # If logged-in: show their TODOs first, then DONEs
+        todos = Task.objects.filter(user=user, status="TODO").order_by("-created_at")
+        dones = Task.objects.filter(user=user, status="DONE").order_by("-created_at")
         return list(todos) + list(dones)
-    
+
+
+
+
+# ===========================
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mode = self.request.GET.get("mode", "read")  # "read" or "manage"
