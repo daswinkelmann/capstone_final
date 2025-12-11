@@ -7,22 +7,28 @@
     </div>
 
     <div class="row justify-content-center">
-    <!-- Task Entries Column -->
-    <div class="col-12 col-md-8 col-lg-6 mt-3 left">
+        <!-- Task Entries Column -->
+        <div class="col-12 col-md-8 col-lg-6 mt-3 left">
+            {% for task in task_list %}
+            <div class="card mb-4 task-card">
+                <div class="card-body">
+                    <div
+                        class="d-flex justify-content-between align-items-center"
+                    >
+                        <!-- LEFT: task title + tiny date -->
+                        <div class="task-text">
+                            <h2 class="task-title mb-1">{{ task.title }}</h2>
+                            <p class="task-date mb-0 text-muted">
+                                {{ task.created_at }}
+                            </p>
+                        </div>
 
-                {% for task in task_list %}
-                    <div class="card mb-4 task-card">
-
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Task:</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ task.title }}</h2>
-                            </a>
+                        <!-- RIGHT: buttons -->
+                        <div
+                            class="task-actions d-flex flex-column align-items-end ms-3"
+                        >
                             {% if mode == "read" %}
+                            <!-- Single DONE button in normal mode -->
                             <form
                                 action="{% url 'task_done' task.id %}"
                                 method="POST"
@@ -30,104 +36,104 @@
                                 {% csrf_token %}
                                 <button
                                     type="submit"
-                                    class="btn btn-sm btn-success mt-2"
+                                    class="btn btn-success btn-sm btn-done"
                                 >
                                     DONE
                                 </button>
                             </form>
                             {% elif mode == "manage" %}
-                            <div class="d-flex justify-content-between mt-2">
-                                <a
-                                    href="{% url 'edit_task' task.id %}"
-                                    class="btn btn-sm btn-outline-success"
-                                    >✏️ EDIT</a
-                                >
-                                <button
-                                    type="button"
-                                    class="btn btn-sm btn-outline-danger btn-delete"
-                                    data-task-id="{{ task.id }}"
-                                >
-                                    ❌ DELETE
-                                </button>
-                            </div>
+                            <!-- Stacked EDIT / DELETE in manage mode -->
+                           <a href="{% url 'edit_task' task.id %}" 
+   class="btn btn-outline-success btn-icon">
+    <i class="bi bi-pencil"></i>
+</a>
+
+<button type="button"
+        class="btn btn-outline-danger btn-icon btn-delete"
+        data-task-id="{{ task.id }}">
+    <i class="bi bi-x-lg"></i>
+</button>
                             {% endif %}
-                            <hr />
-                            <p class="card-text text-muted h6">
-                                {{ task.created_at}}
-                            </p>
-                            </div>
-                
-                              
-                            {% endfor %}
-                            </div> <!-- closes col-12 col-md-8 col-lg-6 -->
-                            </div> <!-- closes outer row -->
-
-               
+                        </div>
                     </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li>
-                <a
-                    href="?page={{ page_obj.next_page_number }}"
-                    class="page-link"
-                >
-                    NEXT &raquo;</a
-                >
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-    <div class="d-flex justify-content-center gap-3 mt-4">
-        <a href="?mode=manage" class="btn btn-outline-secondary btn-lg">Edit</a>
-        <a href="?mode=manage" class="btn btn-outline-danger btn-lg">Delete</a>
-    </div>
 </div>
+</div>
+                {% endfor %}
+            </div>
+            <!-- closes col-12 col-md-8 col-lg-6 -->
+        </div>
+        <!-- closes outer row -->
 
-<!-- Delete confirmation modal -->
-<div
-    class="modal fade"
-    id="deleteModal"
-    tabindex="-1"
-    aria-labelledby="deleteModalLabel"
-    aria-hidden="true"
->
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">
-                    Delete comment?
-                </h5>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete your comment? This action cannot
-                be undone.
-            </div>
-            <div class="modal-footer">
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_next %}
+                <li>
+                    <a
+                        href="?page={{ page_obj.next_page_number }}"
+                        class="page-link"
+                    >
+                        NEXT &raquo;</a
+                    >
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a href="?mode=manage" class="btn btn-outline-secondary btn-lg"
+                >Edit</a
+            >
+            <a href="?mode=manage" class="btn btn-outline-danger btn-lg"
+                >Delete</a
+            >
+        </div>
+    </div>
+
+    <!-- Delete confirmation modal -->
+    <div
+        class="modal fade"
+        id="deleteModal"
+        tabindex="-1"
+        aria-labelledby="deleteModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        Delete comment?
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your comment? This action
+                    cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger"
+                        >Delete</a
+                    >
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- index.html content ends here -->
+
+    {% endblock content %} {% block extras %}
+    <script src="{% static 'js/tasks.js' %}"></script>
+    {% endblock %}
 </div>
-
-<!-- index.html content ends here -->
-
-{% endblock content %} {% block extras %}
-<script src="{% static 'js/tasks.js' %}"></script>
-{% endblock %}

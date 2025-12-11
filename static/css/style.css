@@ -1,16 +1,16 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #f9fafc;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #4a4a4f;
 }
 
 .red-o {
-    color: #E84610;
+    color: #e84610;
 }
 
 .thin {
@@ -26,7 +26,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #f9fafc;
 }
 
 .card {
@@ -98,7 +98,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #e84610;
 }
 
 .post-title {
@@ -120,11 +120,11 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #23bbbb;
 }
 
 .link {
-    color: #23BBBB;
+    color: #23bbbb;
     text-decoration: none;
 }
 
@@ -135,19 +135,19 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #e84610;
     border: none;
     background: transparent;
 }
 
 .btn-delete {
     color: #fff;
-    background: #E84610;
+    background: #e84610;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #e84610;
     background: transparent;
     border: none;
 }
@@ -158,4 +158,55 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Doodoo task cards */
+/* Remove Bootstrap default card look */
+.task-card.card {
+    border: 2px solid #e0e0e0; /* light grey outline */
+    border-radius: 16px; /* clean rounded pill */
+    background: #f9f7f7;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.15);
+
+    padding: 16px;
+    margin-bottom: 1.5rem;
+}
+
+/* Remove Bootstrap's card-body padding so ours takes over */
+.task-card .card-body {
+    padding: 0;
+}
+
+body {
+    border: 5px solid red !important;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-btn i {
+    font-size: 1.2rem;
+}
+
+/* Match EDIT + DELETE buttons to DONE button width */
+.task-actions .btn-icon {
+    width: 70px; /* same width as DONE */
+    height: 38px; /* similar height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* keep icon centred */
+    font-size: 1.2rem; /* make icons readable */
+    border-radius: 8px; /* same rounded shape */
+}
+
+/* Space between stacked buttons */
+.task-actions .btn-icon + .btn-icon {
+    margin-top: 6px;
 }
