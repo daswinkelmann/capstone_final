@@ -6,13 +6,13 @@
         <a href="{% url 'add_task' %}" class="btn btn-primary">New Task</a>
     </div>
 
-    <div class="row">
-        <!-- Task Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+    <div class="row justify-content-center">
+    <!-- Task Entries Column -->
+    <div class="col-12 col-md-8 col-lg-6 mt-3 left">
+
                 {% for task in task_list %}
-                <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                    <div class="card mb-4">
+                    <div class="card mb-4 task-card">
+
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
@@ -55,13 +55,15 @@
                             <p class="card-text text-muted h6">
                                 {{ task.created_at}}
                             </p>
-                        </div>
+                            </div>
+                
+                              
+                            {% endfor %}
+                            </div> <!-- closes col-12 col-md-8 col-lg-6 -->
+                            </div> <!-- closes outer row -->
+
+               
                     </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">{% endif %} {% endfor %}</div>
-        </div>
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
