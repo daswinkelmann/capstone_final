@@ -25,13 +25,46 @@ _Doodoo – Personal Task Tracker_
 <details>
 <summary><strong>Project Scope</strong></summary>
 
-_A simple web app that lets users create, track, and complete personal challenges. It focuses on a clean, mobile-first interface so people can quickly see their challenges, mark them as done, and get a sense of progress over time._
+## **Overview**
+
+Doodoo is a simple personal task manager designed to help a single user create, view, update, and delete their own daily tasks. The goal from the start was to keep the functionality extremely focused — just core CRUD actions — so that I could learn Django properly without taking on more complexity than my current skill level allowed.
+
+Because I began this course with no coding experience, the app intentionally follows the structure, patterns, and logic used in the *CodeStar Blog* project from the LMS. Reusing and adapting those examples (especially the views, templates, and authentication flow) allowed me to build something stable and functional while staying within what I could realistically understand and maintain.
+
+The app is built as **mobile-first**, since that is how people naturally use quick task lists. The desktop layout simply supports the same experience but is not the primary design focus. The project also supports **PWA behaviour** (planned in future features) so it can eventually be launched directly from a mobile home screen.
+
+The application is deliberately **single-user**, meaning each logged-in user only sees their own tasks. This avoids the complexity of multi-user task sharing and keeps the app tightly scoped for the MVP.
+
+Doodoo is simple by design — a clean UI, essential features, and a learning-focused build that reflects where I am in my development journey.
 
 </details>
 
 ---
 
-# 2. UX Design Process
+# 2. Agile Mehodology Process
+
+
+### Agile Approach & Project Board
+
+This project was developed using an Agile-inspired workflow, following short iterative cycles and continuously refining features as the app evolved.  
+To keep everything organised, I used a GitHub Kanban board to track user stories, prioritise tasks using the MoSCoW method, and monitor progress throughout development.
+
+You can view the full project board here:  
+👉 **GitHub Kanban Board:** https://github.com/users/daswinkelmann/projects/4
+
+The board contains all Must/Should/Could tasks, their current status, and a clear record of how the project moved from planning → MVP → refinement.
+
+
+### MoSCoW Prioritisation
+
+On my project board, I used the MoSCoW method to keep things simple and focused:
+
+**Must haves** — The essentials. These are the features required to deliver the MVP. Nothing else gets touched until these are done.
+
+**Should haves** — Valuable additions that improve the product but aren’t strictly required for the MVP. These only begin once all Musts are complete.
+
+**Could haves** — Nice extras. These aren’t critical, but they would enhance the overall experience if time allows. Only tackled after both Musts and Shoulds are finished.
+
 
 <details>
 <summary><strong>User Stories</strong></summary>
@@ -114,7 +147,45 @@ _fonts_
 <details>
 <summary><strong>All Application Features</strong></summary>
 
-_(MVP features)_
+## Features
+
+### Overview
+**Doodoo** is a simple, mobile-first personal task manager built to demonstrate clean CRUD functionality, user authentication, and a smooth workflow.  
+The design focuses on clarity and ease of use, especially on mobile devices, where the app behaves like a portrait-first productivity tool.
+
+### Core Features
+
+#### ✔️ Secure User Login (Single User Access)
+- The app requires users to authenticate before accessing any task functionality.
+- If an unauthenticated visitor tries to access the **Add Task** page or manage tasks, they are automatically redirected to the login screen.
+- Once authenticated, the user sees only **their own tasks** — each task is linked to a specific user in the database.
+- This ensures privacy and prevents cross-account visibility.
+
+#### ✔️ CRUD Task Functionality
+- **Create:** Users can add new tasks via a clean form. Created tasks appear instantly on the homepage.
+- **Read:** The homepage displays all tasks belonging to the logged-in user, prioritising To-Do items over completed ones.
+- **Update:** Tasks can be edited using a dedicated edit page (reusing familiar patterns from the LMS project).
+- **Delete:** Tasks can be deleted through a confirmation modal inspired by the Codestar blog walkthrough.
+
+#### ✔️ Task Management Modes
+- Normal view shows To-Do tasks with a **Done** button.
+- A dedicated **Manage Mode** toggles the interface to display Edit and Delete controls for each task, matching the project wireframes.
+
+### Mobile-First Design
+- The entire UI has been designed with **portrait mobile screens** in mind.
+- Buttons are large and easy to tap.
+- Cards and spacing adapt cleanly to small screens, with no horizontal scrolling.
+
+### PWA Foundations
+- The app is structured so it can operate as a **Progressive Web App (PWA)**.
+- When PWA support is added (manifest + service worker), users will be able to:
+  - Install the app to their mobile Home Screen.
+  - Launch it in standalone mode.
+  - Access cached content when offline.
+- These PWA requirements are fully documented in the **Future Features** section and will be implemented after the core MVP.
+
+---
+
 
 </details>
 
@@ -172,14 +243,95 @@ Exported files include at minimum: task title, status, category, and due date (i
 
 ---
 
+
 # 5. Deployment
 
 <details>
 <summary><strong>Deployment Steps</strong></summary>
 
-_Heroku_
+## **Deployment**
 
+This project was deployed using **Heroku**, following the standard Django deployment workflow taught in the Code Institute curriculum.  
+The aim was to ensure the application ran securely, with a production-ready database and static file handling.
+
+---
+
+### **1. Project Preparation**
+Before deployment, the following production files and settings were added:
+
+- `requirements.txt` — listing all the project dependencies  
+- `Procfile` — telling Heroku how to run the Django app  
+- Set `DEBUG = False` and configured `ALLOWED_HOSTS`  
+- Added Whitenoise to serve static files in production  
+- Created and migrated the database on Heroku
+
+The environment variables were moved into Heroku’s config settings, including:
+- `DATABASE_URL`
+- `SECRET_KEY`
+- `CLOUDINARY_URL` *(if used later for media files)*
+
+---
+
+### **2. Connecting the GitHub Repository**
+The project was deployed directly from GitHub:
+
+1. Logged into **Heroku Dashboard**  
+2. Created a new Heroku app  
+3. Connected the app to GitHub  
+4. Selected the `main` branch  
+5. Enabled **Automatic Deploys** (optional but recommended)
+
+---
+
+### **3. Deploying the Application**
+After configuration:
+
+1. Clicked **Deploy Branch**  
+2. Heroku installed dependencies from `requirements.txt`  
+3. Ran the build process  
+4. Released the app  
+5. Confirmed that the link to the live site was working
+
+If migrations were needed, these were run using:
+
+```
+heroku run python manage.py migrate
+```
+
+---
+
+### **4. Static Files**
+Whitenoise was used to serve static files in production.  
+The following were added:
+
+- `"whitenoise.middleware.WhiteNoiseMiddleware"` to `MIDDLEWARE`
+- `STATIC_ROOT` and `STATICFILES_DIRS` settings  
+- `collectstatic` was run automatically by Heroku
+
+---
+
+### **5. Final Checks**
+After deployment, I verified:
+
+- User authentication (login, logout, signup) works on live environment  
+- CRUD functionality behaves correctly  
+- The app loads correctly on mobile  
+- The nav bar updates based on the login state  
+- No console errors or missing files
+
+---
+
+### **6. Live Link**
+
+> **Live Deployment:** *ADD YOUR HEROKU LINK HERE*
+
+---
+
+### **Notes for Future Deployment**
+- When the PWA version is added, additional configuration will be needed (manifest.json, service worker, cache strategy).  
+- For image uploads or future media features, Cloudinary or AWS S3 can be added.
 </details>
+
 
 ---
 
@@ -297,6 +449,40 @@ Actual: As above (PASS)
 <details>
 <summary><strong>Technologies and Tools</strong></summary>
 *Django, Python, Bootstrap, GitHub*  
+
+### Languages & Core Technologies
+- **HTML5** – Structure of all templates.
+- **CSS3** – Styling for layout, buttons, and responsive design.  
+- **JavaScript** – Used to control the delete confirmation modal and manage interactive UI behaviour.
+- **Python 3.13** – Primary programming language.
+- **Django 4.2** – Web framework powering all backend logic.
+- **PostgreSQL** – Production database (via Heroku).
+- **SQLite** – Used locally for early development (REPLACE WITH FINAL IF NEEDED).
+
+### Backend Frameworks & Libraries
+- **Django** – Core framework for routing, views, authentication and ORM.
+- **Django AllAuth** – Handles user registration, login, and logout flow.
+- **dj-database-url** – Reads database configuration from environment variables.
+- **Whitenoise** – Serves static files in production without needing an external provider.
+- **psycopg2-binary** – PostgreSQL database adapter for Django.
+- **Bootstrap 5** – Provides layout, grid system, buttons, cards, modals, etc.
+
+> *All Python dependencies are listed in `requirements.txt`.*
+
+### Development Tools
+- **VS Code** – Main IDE used for coding and project structure.
+- **Git + GitHub** – Version control, online repository storage, and use of GitHub Projects Kanban board.
+- **Heroku** – Hosting platform for production deployment.
+- **Balsamiq** – Used to design the original wireframes for the MVP.
+- **Browser DevTools** – Inspecting layout, debugging CSS/JS, and testing mobile responsiveness.
+- **AI Tools (ChatGPT & GitHub Copilot)** – Assisted with code syntax, debugging, and adapting LMS patterns.
+
+### Additional Utilities (Optional / Add Later)
+- **ADD IMAGE COMPRESSION TOOL NAME IF USED**
+- **ADD PWA TESTING TOOL WHEN SERVICE WORKER IS IMPLEMENTED**
+- **ADD ANY CSS FRAMEWORK EXTENSIONS IF USED DURING STYLING**
+- **ADD ACCESSIBILITY OR LINTING TOOLS IF ADDED LATER**  
+ 
 </details>
 
 ---
