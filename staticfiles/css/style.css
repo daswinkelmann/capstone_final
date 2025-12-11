@@ -25,6 +25,73 @@ body {
     filter: invert(1);
 }
 
+footer {
+    background-color: #2f3136;
+    color: #e9eef5;
+}
+
+/* Authentication pages */
+
+.auth-card {
+    max-width: 420px;
+    margin: 3rem auto;
+    padding: 1.75rem 2rem;
+    background: #f4f1ec;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.auth-card h1,
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: #1f2937;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.auth-card input {
+    border-radius: 8px;
+    padding: 0.6rem 0.75rem;
+}
+
+.auth-card button {
+    margin-top: 0.75rem;
+}
+
+/* Auth forms – password text */
+.auth-card .password_reset {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Auth forms – text in panels */
+.auth-card,
+.auth-card label,
+.auth-card p,
+.auth-card a {
+    color: #2e2e2e;
+}
+
+/* Auth panels: readable text on light background */
+.auth-card {
+    color: #2f3136;
+}
+
+.auth-card label,
+.auth-card p,
+.auth-card a {
+    color: #2f3136;
+}
+
+
+
+
 .task-card.card {
     background: #f4f1ec;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -424,9 +491,4 @@ body {
 /* Space between stacked buttons */
 .task-actions .btn-icon + .btn-icon {
     margin-top: 6px;
-}
-
-footer {
-    background-color: #2f3136;
-    color: #e9eef5;
 }

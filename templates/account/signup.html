@@ -2,21 +2,20 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2>Register</h2>
-    <p>Create an account to manage your tasks</p>
+    <h2 class="mb-3">Register for Doodoo</h2>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <div class="auth-card">
+        <form method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <button type="submit" class="btn btn-primary">
-            Sign up
-        </button>
-    </form>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+    </div>
 
     <p class="mt-3">
         Already have an account?
-        <a href="{% url 'account_login' %}">Log-in here</a>.
+        <a href="{% url 'account_login' %}">Log in here</a>.
     </p>
 </div>
 {% endblock %}
