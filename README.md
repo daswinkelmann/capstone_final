@@ -29,7 +29,7 @@ _Doodoo – Personal Task Tracker_
 
 Doodoo is a simple personal task manager designed to help a single user create, view, update, and delete their own daily tasks. The goal from the start was to keep the functionality extremely focused — just core CRUD actions — so that I could learn Django properly without taking on more complexity than my current skill level allowed.
 
-Because I began this course with no coding experience, the app intentionally follows the structure, patterns, and logic used in the *CodeStar Blog* project from the LMS. Reusing and adapting those examples (especially the views, templates, and authentication flow) allowed me to build something stable and functional while staying within what I could realistically understand and maintain.
+Because I began this course with no coding experience, the app intentionally follows the structure, patterns, and logic used in the _CodeStar Blog_ project from the LMS. Reusing and adapting those examples (especially the views, templates, and authentication flow) allowed me to build something stable and functional while staying within what I could realistically understand and maintain.
 
 The app is built as **mobile-first**, since that is how people naturally use quick task lists. The desktop layout simply supports the same experience but is not the primary design focus. The project also supports **PWA behaviour** (planned in future features) so it can eventually be launched directly from a mobile home screen.
 
@@ -43,7 +43,6 @@ Doodoo is simple by design — a clean UI, essential features, and a learning-fo
 
 # 2. Agile Mehodology Process
 
-
 ### Agile Approach & Project Board
 
 This project was developed using an Agile-inspired workflow, following short iterative cycles and continuously refining features as the app evolved.  
@@ -54,7 +53,6 @@ You can view the full project board here:
 
 The board contains all Must/Should/Could tasks, their current status, and a clear record of how the project moved from planning → MVP → refinement.
 
-
 ### MoSCoW Prioritisation
 
 On my project board, I used the MoSCoW method to keep things simple and focused:
@@ -64,7 +62,6 @@ On my project board, I used the MoSCoW method to keep things simple and focused:
 **Should haves** — Valuable additions that improve the product but aren’t strictly required for the MVP. These only begin once all Musts are complete.
 
 **Could haves** — Nice extras. These aren’t critical, but they would enhance the overall experience if time allows. Only tackled after both Musts and Shoulds are finished.
-
 
 <details>
 <summary><strong>User Stories</strong></summary>
@@ -113,30 +110,29 @@ Note: this project is designed as a mobile first app. Desktop and tablet are nic
 </details>
 
 <details>
-<summary><strong>Color Scheme</strong></summary>
+<summary><strong>Typography & Colour Choices</strong></summary>
 
-### Primary Colors
+## Typography & Colour Choices
 
-_(Add hex values)_
+The visual design of _Doodoo_ focuses on clarity, speed of use, and legibility across devices, particularly on mobile. A modern sans-serif typeface was chosen to keep the interface clean, neutral, and easy to read at small sizes. Text hierarchy is deliberately simple, with clear separation between task titles, supporting metadata, and interactive elements, allowing users to scan tasks quickly without cognitive load.
 
-### Text Colors
+A dark background was selected as the primary canvas to improve contrast and reduce eye strain, especially for mobile users who are likely to interact with the app in short, frequent sessions. Task items sit on lighter “pill” cards to clearly separate content from the background, while bright, high-contrast colours are used for primary actions such as **Done**, **Edit**, and **Delete**. This ensures interactive elements are instantly recognisable and accessible, even at a glance. The overall palette is warm and restrained, balancing usability with a friendly, approachable feel.
 
-_(Add hex values)_
+---
 
-### Background Colors
+## Colour Palette
 
-_(Add hex values)_
-
-### Status Colors
-
-_(colours)_
-
-</details>
-
-<details>
-<summary><strong>Fonts</strong></summary>
-
-_fonts_
+| Usage                       | Colour         | Hex       |
+| --------------------------- | -------------- | --------- |
+| Main background             | Dark charcoal  | `#2F3136` |
+| Task card background        | Warm off-white | `#F4F1EC` |
+| Task card border            | Soft grey      | `#D9D6D2` |
+| Primary text (headings)     | Dark slate     | `#1F2937` |
+| Secondary text (dates/meta) | Muted grey     | `#6B7280` |
+| Primary action (Done)       | Green          | `#22C55E` |
+| Edit action                 | Amber / yellow | `#F59E0B` |
+| Delete action               | Red            | `#E84610` |
+| Links & accents             | Teal           | `#188181` |
 
 </details>
 
@@ -150,42 +146,47 @@ _fonts_
 ## Features
 
 ### Overview
+
 **Doodoo** is a simple, mobile-first personal task manager built to demonstrate clean CRUD functionality, user authentication, and a smooth workflow.  
 The design focuses on clarity and ease of use, especially on mobile devices, where the app behaves like a portrait-first productivity tool.
 
 ### Core Features
 
 #### ✔️ Secure User Login (Single User Access)
-- The app requires users to authenticate before accessing any task functionality.
-- If an unauthenticated visitor tries to access the **Add Task** page or manage tasks, they are automatically redirected to the login screen.
-- Once authenticated, the user sees only **their own tasks** — each task is linked to a specific user in the database.
-- This ensures privacy and prevents cross-account visibility.
+
+-   The app requires users to authenticate before accessing any task functionality.
+-   If an unauthenticated visitor tries to access the **Add Task** page or manage tasks, they are automatically redirected to the login screen.
+-   Once authenticated, the user sees only **their own tasks** — each task is linked to a specific user in the database.
+-   This ensures privacy and prevents cross-account visibility.
 
 #### ✔️ CRUD Task Functionality
-- **Create:** Users can add new tasks via a clean form. Created tasks appear instantly on the homepage.
-- **Read:** The homepage displays all tasks belonging to the logged-in user, prioritising To-Do items over completed ones.
-- **Update:** Tasks can be edited using a dedicated edit page (reusing familiar patterns from the LMS project).
-- **Delete:** Tasks can be deleted through a confirmation modal inspired by the Codestar blog walkthrough.
+
+-   **Create:** Users can add new tasks via a clean form. Created tasks appear instantly on the homepage.
+-   **Read:** The homepage displays all tasks belonging to the logged-in user, prioritising To-Do items over completed ones.
+-   **Update:** Tasks can be edited using a dedicated edit page (reusing familiar patterns from the LMS project).
+-   **Delete:** Tasks can be deleted through a confirmation modal inspired by the Codestar blog walkthrough.
 
 #### ✔️ Task Management Modes
-- Normal view shows To-Do tasks with a **Done** button.
-- A dedicated **Manage Mode** toggles the interface to display Edit and Delete controls for each task, matching the project wireframes.
+
+-   Normal view shows To-Do tasks with a **Done** button.
+-   A dedicated **Manage Mode** toggles the interface to display Edit and Delete controls for each task, matching the project wireframes.
 
 ### Mobile-First Design
-- The entire UI has been designed with **portrait mobile screens** in mind.
-- Buttons are large and easy to tap.
-- Cards and spacing adapt cleanly to small screens, with no horizontal scrolling.
+
+-   The entire UI has been designed with **portrait mobile screens** in mind.
+-   Buttons are large and easy to tap.
+-   Cards and spacing adapt cleanly to small screens, with no horizontal scrolling.
 
 ### PWA Foundations
-- The app is structured so it can operate as a **Progressive Web App (PWA)**.
-- When PWA support is added (manifest + service worker), users will be able to:
-  - Install the app to their mobile Home Screen.
-  - Launch it in standalone mode.
-  - Access cached content when offline.
-- These PWA requirements are fully documented in the **Future Features** section and will be implemented after the core MVP.
+
+-   The app is structured so it can operate as a **Progressive Web App (PWA)**.
+-   When PWA support is added (manifest + service worker), users will be able to:
+    -   Install the app to their mobile Home Screen.
+    -   Launch it in standalone mode.
+    -   Access cached content when offline.
+-   These PWA requirements are fully documented in the **Future Features** section and will be implemented after the core MVP.
 
 ---
-
 
 </details>
 
@@ -243,7 +244,6 @@ Exported files include at minimum: task title, status, category, and due date (i
 
 ---
 
-
 # 5. Deployment
 
 <details>
@@ -257,39 +257,43 @@ The aim was to ensure the application ran securely, with a production-ready data
 ---
 
 ### **1. Project Preparation**
+
 Before deployment, the following production files and settings were added:
 
-- `requirements.txt` — listing all the project dependencies  
-- `Procfile` — telling Heroku how to run the Django app  
-- Set `DEBUG = False` and configured `ALLOWED_HOSTS`  
-- Added Whitenoise to serve static files in production  
-- Created and migrated the database on Heroku
+-   `requirements.txt` — listing all the project dependencies
+-   `Procfile` — telling Heroku how to run the Django app
+-   Set `DEBUG = False` and configured `ALLOWED_HOSTS`
+-   Added Whitenoise to serve static files in production
+-   Created and migrated the database on Heroku
 
 The environment variables were moved into Heroku’s config settings, including:
-- `DATABASE_URL`
-- `SECRET_KEY`
-- `CLOUDINARY_URL` *(if used later for media files)*
+
+-   `DATABASE_URL`
+-   `SECRET_KEY`
+-   `CLOUDINARY_URL` _(if used later for media files)_
 
 ---
 
 ### **2. Connecting the GitHub Repository**
+
 The project was deployed directly from GitHub:
 
-1. Logged into **Heroku Dashboard**  
-2. Created a new Heroku app  
-3. Connected the app to GitHub  
-4. Selected the `main` branch  
+1. Logged into **Heroku Dashboard**
+2. Created a new Heroku app
+3. Connected the app to GitHub
+4. Selected the `main` branch
 5. Enabled **Automatic Deploys** (optional but recommended)
 
 ---
 
 ### **3. Deploying the Application**
+
 After configuration:
 
-1. Clicked **Deploy Branch**  
-2. Heroku installed dependencies from `requirements.txt`  
-3. Ran the build process  
-4. Released the app  
+1. Clicked **Deploy Branch**
+2. Heroku installed dependencies from `requirements.txt`
+3. Ran the build process
+4. Released the app
 5. Confirmed that the link to the live site was working
 
 If migrations were needed, these were run using:
@@ -301,37 +305,39 @@ heroku run python manage.py migrate
 ---
 
 ### **4. Static Files**
+
 Whitenoise was used to serve static files in production.  
 The following were added:
 
-- `"whitenoise.middleware.WhiteNoiseMiddleware"` to `MIDDLEWARE`
-- `STATIC_ROOT` and `STATICFILES_DIRS` settings  
-- `collectstatic` was run automatically by Heroku
+-   `"whitenoise.middleware.WhiteNoiseMiddleware"` to `MIDDLEWARE`
+-   `STATIC_ROOT` and `STATICFILES_DIRS` settings
+-   `collectstatic` was run automatically by Heroku
 
 ---
 
 ### **5. Final Checks**
+
 After deployment, I verified:
 
-- User authentication (login, logout, signup) works on live environment  
-- CRUD functionality behaves correctly  
-- The app loads correctly on mobile  
-- The nav bar updates based on the login state  
-- No console errors or missing files
+-   User authentication (login, logout, signup) works on live environment
+-   CRUD functionality behaves correctly
+-   The app loads correctly on mobile
+-   The nav bar updates based on the login state
+-   No console errors or missing files
 
 ---
 
 ### **6. Live Link**
 
-> **Live Deployment:** *ADD YOUR HEROKU LINK HERE*
+> **Live Deployment:** _ADD YOUR HEROKU LINK HERE_
 
 ---
 
 ### **Notes for Future Deployment**
-- When the PWA version is added, additional configuration will be needed (manifest.json, service worker, cache strategy).  
-- For image uploads or future media features, Cloudinary or AWS S3 can be added.
-</details>
 
+-   When the PWA version is added, additional configuration will be needed (manifest.json, service worker, cache strategy).
+-   For image uploads or future media features, Cloudinary or AWS S3 can be added.
+</details>
 
 ---
 
@@ -396,8 +402,26 @@ Actual: As above (PASS)
 </details>
 
 <details>
-<summary><strong>Manual Testing</strong></summary>
-*(Testing table + user flows)*  
+<summary><strong>Manual Testing of CRUD funcionality</strong></summary>
+
+Manual testing was carried out to verify that the core Create, Read, Update, and Delete (CRUD) functionality of the Doodoo task manager works as intended. Testing focused on validating correct behaviour for authenticated and unauthenticated users, ensuring that tasks can only be created, viewed, edited, and deleted by their owner, and confirming that appropriate redirects and user feedback occur throughout the process. All tests were performed locally and against the deployed Heroku version to ensure consistent behaviour across environments.
+
+---
+
+| Feature                 | User Action                                                        | Expected Result                                                 | Outcome |
+| ----------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- | ------- |
+| Create Task             | Logged-in user clicks **New Task**, enters a title, submits form   | User is redirected to Home and the new task appears in the list | ✅ Pass |
+| Create Task (Auth)      | Logged-out user attempts to access **Add Task**                    | User is redirected to Login page                                | ✅ Pass |
+| Read Tasks              | Logged-in user views Home page                                     | Only tasks belonging to the logged-in user are displayed        | ✅ Pass |
+| Update Task             | Logged-in user enters **Manage** mode, edits a task, saves changes | User is redirected to Home and the updated task title is shown  | ✅ Pass |
+| Update Task (Integrity) | User edits a task                                                  | No duplicate task is created; only the selected task is updated | ✅ Pass |
+| Delete Task             | Logged-in user deletes a task via confirmation modal               | Task is removed from the list with no errors shown              | ✅ Pass |
+| Delete Task (Integrity) | User deletes a task                                                | No other tasks are affected                                     | ✅ Pass |
+| Access Control          | Logged-out user attempts to manipulate tasks                       | Access is denied and user is redirected to Login                | ✅ Pass |
+| Logout                  | Logged-in user logs out                                            | User is returned to Home with no tasks visible                  | ✅ Pass |
+
+</details>
+
 </details>
 
 ---
@@ -421,17 +445,91 @@ Actual: As above (PASS)
 
 ---
 
-# 8. Database
+### ERD (Entity Relationship Diagram)
+
+The Doodoo Task Manager uses a very simple relational database structure, designed to keep the project lightweight and focused on delivering core CRUD functionality. Below is the ERD that represents the relationships between the main models in the system.
+
+_INSERT ERD IMAGE HERE_
 
 <details>
-<summary><strong>ERD (Entity Relationship Diagram)</strong></summary>
-*ERD*  
-</details>
+<summary><strong>ASCII ERD – Doodoo Task Manager</strong></summary>
 
-<details>
-<summary><strong>Main Tables / Models</strong></summary>
-*Task model, User model, relationships*  
+```text
++-------------------------+          1 ──────── *        +-------------------------+
+|         User            |----------------------------->|          Task           |
++-------------------------+                               +-------------------------+
+| id (PK)                 |                               | id (PK)                |
+| username                |                               | title                  |
+| email                   |                               | status ("TODO"/"DONE") |
+| password (hashed)       |                               | created_at             |
+| ... (Django auth fields)|                               | user_id (FK → User.id) |
++-------------------------+                               +-------------------------+
+
+Relationship:
+- One User can have many Tasks.
+- Each Task belongs to exactly one User.
 </details>
+```
+
+---
+
+### Main Tables / Models
+
+#### **User**
+
+This model is provided by Django’s built-in authentication system (and extended via AllAuth for login and registration).  
+Each user has their own private task list — tasks cannot be viewed or accessed by other users.
+
+Key fields include:
+
+-   `id` (primary key)
+-   `username`
+-   `email`
+-   `password`
+-   Django authentication metadata (last login, is_staff, etc.)
+
+---
+
+#### **Task**
+
+The Task model stores the user’s to-do items. Each task is linked to exactly one user, creating a one-to-many relationship (one user → many tasks).
+
+Key fields include:
+
+-   `id` (primary key)
+-   `title` – short description of the task
+-   `status` – `"TODO"` or `"DONE"`
+-   `created_at` – auto timestamp
+-   `user` – foreign key linking to the User model
+
+Relationship:
+
+-   **User 1 — _∞_ Task**
+
+This relationship ensures:
+
+-   Each user only sees their own tasks.
+-   Logging out prevents access to any task data.
+-   Any CRUD operation (create, edit, delete, mark done) is always scoped to the currently logged-in user.
+
+---
+
+### Database Engines
+
+During development:
+
+-   **SQLite** was used locally as Django’s default database.
+
+During production:
+
+-   **PostgreSQL** (via Heroku) is used as the live database, configured through `dj-database-url` and environment variables.
+
+---
+
+### Notes for the Assessor
+
+-   The ERD was kept intentionally simple to match the scope of the project.
+-   Future versions (described in the “Future Features” section) could extend the database to support categories, reminders, due dates, PWA syncing, etc.
 
 ---
 
@@ -439,7 +537,47 @@ Actual: As above (PASS)
 
 <details>
 <summary><strong>Sources & Credits</strong></summary>
-*Links to docs, tutorials, images, icons, etc.*  
+## **References**
+
+Throughout the development of this project, I relied on a mixture of formal learning materials, tutor guidance, peer support, and external resources to deepen my understanding of Django, Python, and full-stack development concepts.
+
+### **Primary Learning Sources**
+
+-   **Code Institute LMS**  
+    Especially the Django modules, with _Views Part 3_ being the section I returned to more times than I care to admit.  
+    These lessons formed the backbone of my CRUD understanding, user authentication patterns, and project structure.
+
+-   **Mark Briscoe – Masterclass (Recording & Slides)**  
+    Gave essential context for Django project architecture, templates, and deployment best practices.
+
+### **YouTube Tutorials & Channels**
+
+These were used for conceptual understanding only — not for copying code:
+
+-   Programming with Mosh
+-   Corey Schafer
+-   Denis Ivy
+-   Tech With Tim
+-   Bro Code _(recommended by my classmate Denise — thanks!)_
+
+Each helped clarify tricky Python/Django ideas when the LMS examples weren’t sinking in.
+
+### **Online Documentation & Articles**
+
+-   **MDN Web Docs / W3Schools** — for quick syntax checks and HTML/CSS refreshers
+-   **Django Official Documentation** — especially for authentication, forms, and URL routing
+-   **JetBrains Blog** — helpful articles on Python patterns and debugging
+-   **Codecademy Articles** — occasionally used when I needed an alternative explanation to reinforce a concept
+
+### **Peer Support**
+
+-   **Classmates (especially Denise)** who shared tutorials, helped troubleshoot, and offered moral support
+-   Discord community discussions on common Django pitfalls
+
+---
+
+This combination of structured learning, community resources, and external references helped me understand the material, troubleshoot issues, and build confidence in writing and adapting code myself.
+
 </details>
 
 ---
@@ -448,41 +586,45 @@ Actual: As above (PASS)
 
 <details>
 <summary><strong>Technologies and Tools</strong></summary>
-*Django, Python, Bootstrap, GitHub*  
+*Django, Python, Bootstrap, GitHub*
 
 ### Languages & Core Technologies
-- **HTML5** – Structure of all templates.
-- **CSS3** – Styling for layout, buttons, and responsive design.  
-- **JavaScript** – Used to control the delete confirmation modal and manage interactive UI behaviour.
-- **Python 3.13** – Primary programming language.
-- **Django 4.2** – Web framework powering all backend logic.
-- **PostgreSQL** – Production database (via Heroku).
-- **SQLite** – Used locally for early development (REPLACE WITH FINAL IF NEEDED).
+
+-   **HTML5** – Structure of all templates.
+-   **CSS3** – Styling for layout, buttons, and responsive design.
+-   **JavaScript** – Used to control the delete confirmation modal and manage interactive UI behaviour.
+-   **Python 3.13** – Primary programming language.
+-   **Django 4.2** – Web framework powering all backend logic.
+-   **PostgreSQL** – Production database (via Heroku).
+-   **SQLite** – Used locally for early development (REPLACE WITH FINAL IF NEEDED).
 
 ### Backend Frameworks & Libraries
-- **Django** – Core framework for routing, views, authentication and ORM.
-- **Django AllAuth** – Handles user registration, login, and logout flow.
-- **dj-database-url** – Reads database configuration from environment variables.
-- **Whitenoise** – Serves static files in production without needing an external provider.
-- **psycopg2-binary** – PostgreSQL database adapter for Django.
-- **Bootstrap 5** – Provides layout, grid system, buttons, cards, modals, etc.
 
-> *All Python dependencies are listed in `requirements.txt`.*
+-   **Django** – Core framework for routing, views, authentication and ORM.
+-   **Django AllAuth** – Handles user registration, login, and logout flow.
+-   **dj-database-url** – Reads database configuration from environment variables.
+-   **Whitenoise** – Serves static files in production without needing an external provider.
+-   **psycopg2-binary** – PostgreSQL database adapter for Django.
+-   **Bootstrap 5** – Provides layout, grid system, buttons, cards, modals, etc.
+
+> _All Python dependencies are listed in `requirements.txt`._
 
 ### Development Tools
-- **VS Code** – Main IDE used for coding and project structure.
-- **Git + GitHub** – Version control, online repository storage, and use of GitHub Projects Kanban board.
-- **Heroku** – Hosting platform for production deployment.
-- **Balsamiq** – Used to design the original wireframes for the MVP.
-- **Browser DevTools** – Inspecting layout, debugging CSS/JS, and testing mobile responsiveness.
-- **AI Tools (ChatGPT & GitHub Copilot)** – Assisted with code syntax, debugging, and adapting LMS patterns.
+
+-   **VS Code** – Main IDE used for coding and project structure.
+-   **Git + GitHub** – Version control, online repository storage, and use of GitHub Projects Kanban board.
+-   **Heroku** – Hosting platform for production deployment.
+-   **Balsamiq** – Used to design the original wireframes for the MVP.
+-   **Browser DevTools** – Inspecting layout, debugging CSS/JS, and testing mobile responsiveness.
+-   **AI Tools (ChatGPT & GitHub Copilot)** – Assisted with code syntax, debugging, and adapting LMS patterns.
 
 ### Additional Utilities (Optional / Add Later)
-- **ADD IMAGE COMPRESSION TOOL NAME IF USED**
-- **ADD PWA TESTING TOOL WHEN SERVICE WORKER IS IMPLEMENTED**
-- **ADD ANY CSS FRAMEWORK EXTENSIONS IF USED DURING STYLING**
-- **ADD ACCESSIBILITY OR LINTING TOOLS IF ADDED LATER**  
- 
+
+-   **ADD IMAGE COMPRESSION TOOL NAME IF USED**
+-   **ADD PWA TESTING TOOL WHEN SERVICE WORKER IS IMPLEMENTED**
+-   **ADD ANY CSS FRAMEWORK EXTENSIONS IF USED DURING STYLING**
+-   **ADD ACCESSIBILITY OR LINTING TOOLS IF ADDED LATER**
+
 </details>
 
 ---

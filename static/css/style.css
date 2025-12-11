@@ -89,9 +89,6 @@ footer {
     color: #2f3136;
 }
 
-
-
-
 .task-card.card {
     background: #f4f1ec;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -130,6 +127,19 @@ footer {
     color: #6b7280;
     font-size: 0.85rem;
     opacity: 1;
+}
+
+/* Fix modal text colour */
+.modal-content {
+    color: #2e2e2e;
+}
+
+.modal-title {
+    color: #1f2937;
+}
+
+.modal-body {
+    color: #2e2e2e;
 }
 
 /* button states */
