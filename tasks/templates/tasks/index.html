@@ -44,12 +44,12 @@
                             {% elif mode == "manage" %}
                             <!-- Stacked EDIT / DELETE in manage mode -->
                            <a href="{% url 'edit_task' task.id %}" 
-   class="btn btn-outline-success btn-icon">
+   class="btn btn-sm mb-1 btn-icon btn-edit-icon">
     <i class="bi bi-pencil"></i>
 </a>
 
 <button type="button"
-        class="btn btn-outline-danger btn-icon btn-delete"
+        class="btn btn-sm btn-delete btn-icon btn-delete-icon"
         data-task-id="{{ task.id }}">
     <i class="bi bi-x-lg"></i>
 </button>
@@ -80,7 +80,7 @@
             </ul>
         </nav>
         {% endif %}
-        <div class="d-flex justify-content-center gap-3 mt-4">
+        <div class="bottom-actions">
             <a href="?mode=manage" class="btn btn-outline-secondary btn-lg"
                 >Edit</a
             >

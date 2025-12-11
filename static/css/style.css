@@ -1,5 +1,171 @@
 body {
-    background-color: #f9fafc;
+    font-family: "Inter", sans-serif;
+    background: #2f3136;
+    color: #e9eef5;
+}
+
+.navbar {
+    background-color: #2f3136;
+}
+
+.navbar .nav-link,
+.navbar-brand {
+    color: #e9eef5;
+}
+
+.navbar .nav-link:hover {
+    color: #f5a623;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.task-card.card {
+    background: #f4f1ec;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.task-card .card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.task-title {
+    color: #1f2937;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.task-title {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.task-date {
+    font-size: 0.72rem;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.task-text {
+    text-align: left;
+}
+
+.task-date {
+    color: #6b7280;
+    font-size: 0.85rem;
+    opacity: 1;
+}
+
+/* button states */
+
+.btn-primary {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+    color: #1f2937;
+}
+
+.btn-done {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: #0b1a10;
+    font-weight: 700;
+}
+
+.btn-done:hover {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+}
+
+.btn-done:active {
+    transform: translateY(1px);
+}
+
+.btn-edit-icon {
+    background: #fbbf24;
+    border-color: #fbbf24;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.btn-edit-icon:hover {
+    background: #f59e0b;
+    border-color: #f59e0b;
+    color: #111827;
+}
+
+.btn-edit-icon:active {
+    transform: translateY(1px);
+}
+
+.btn-delete-icon {
+    background: #f97316;
+    border-color: #f97316;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.btn-delete-icon:hover {
+    background: #ea580c;
+    border-color: #ea580c;
+    color: #ffffff;
+}
+
+.btn-delete-icon:active {
+    transform: translateY(1px);
+}
+
+.btn:focus,
+.btn:focus-visible {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    outline: black;
+}
+
+/* Edit/delete button */
+
+.bottom-actions .btn {
+    min-width: 120px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+.bottom-actions .btn-outline-secondary {
+    background-color: #fbbf24;
+    border-color: #fbbf24;
+    color: #1f2937;
+}
+
+.bottom-actions .btn-outline-secondary:hover {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+}
+
+.bottom-actions .btn-outline-danger {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: #fff;
+}
+
+.bottom-actions .btn-outline-danger:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
 }
 
 .brand {
@@ -26,7 +192,7 @@ body {
 }
 
 .main-bg {
-    background-color: #f9fafc;
+    background-color: transparent;
 }
 
 .card {
@@ -111,6 +277,18 @@ body {
     color: lightgray;
 }
 
+/* edit/delete button position */
+.bottom-actions {
+    position: fixed;
+    bottom: 88px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1000;
+}
+
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -160,28 +338,6 @@ body {
     color: rgb(222, 146, 168);
 }
 
-/* Doodoo task cards */
-/* Remove Bootstrap default card look */
-.task-card.card {
-    border: 2px solid #e0e0e0; /* light grey outline */
-    border-radius: 16px; /* clean rounded pill */
-    background: #f9f7f7;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.15);
-
-    padding: 16px;
-    margin-bottom: 1.5rem;
-}
-
-/* Remove Bootstrap's card-body padding so ours takes over */
-.task-card .card-body {
-    padding: 0;
-}
-
-body {
-    border: 5px solid red !important;
-}
-
 .icon-btn {
     width: 34px;
     height: 34px;
@@ -192,6 +348,65 @@ body {
 }
 .icon-btn i {
     font-size: 1.2rem;
+}
+
+/* button styling */
+
+:root {
+    --btn-green: #3fa572;
+    --btn-green-hover: #369363;
+
+    --btn-amber: #f0b429;
+    --btn-amber-hover: #e3a820;
+
+    --btn-orange: #e57a2f;
+    --btn-orange-hover: #d86f28;
+
+    --btn-red: #d64545;
+    --btn-red-hover: #c83c3c;
+
+    --btn-text: #ffffff;
+}
+
+.btn-done {
+    background: var(--btn-green) !important;
+    border-color: var(--btn-green) !important;
+    color: var(--btn-text) !important;
+}
+.btn-done:hover {
+    background: var(--btn-green-hover) !important;
+    border-color: var(--btn-green-hover) !important;
+}
+
+.task-actions .btn-icon {
+    border: none !important;
+    color: var(--btn-text) !important;
+}
+
+.task-actions .btn-edit-icon {
+    background: var(--btn-amber) !important;
+}
+.task-actions .btn-edit-icon:hover {
+    background: var(--btn-amber-hover) !important;
+}
+
+.task-actions .btn-delete-icon {
+    background: var(--btn-red) !important;
+}
+.task-actions .btn-delete-icon:hover {
+    background: var(--btn-red-hover) !important;
+}
+
+.btn:focus,
+.btn:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(240, 180, 41, 0.35) !important;
+}
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
 }
 
 /* Match EDIT + DELETE buttons to DONE button width */
@@ -209,4 +424,9 @@ body {
 /* Space between stacked buttons */
 .task-actions .btn-icon + .btn-icon {
     margin-top: 6px;
+}
+
+footer {
+    background-color: #2f3136;
+    color: #e9eef5;
 }
