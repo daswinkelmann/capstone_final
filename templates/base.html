@@ -1,4 +1,7 @@
 {% load static %}
+{% url 'account_login' as login_url %}
+{% url 'account_logout' as logout_url %}
+{% url 'account_signup' as signup_url %}
 
 {% url 'home' as home_url %}
 
@@ -37,13 +40,57 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
+               
+                {% comment %} ENTER UL CODE HERE {% endcomment %}
+                
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Home link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="#">a task manager</a>
+                        <a
+                            class="nav-link {% if request.path == home_url %}active{% endif %}"
+                            aria-current="page"
+                            href="{% url 'home' %}"
+                        >
+                            Home
+                        </a>
                     </li>
 
+                    {% if user.is_authenticated %}
+                        <!-- Logout -->
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                href="{% url 'account_logout' %}"
+                            >
+                                Logout
+                            </a>
+                        </li>
+                    {% else %}
+                        <!-- Register -->
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                href="{% url 'account_signup' %}"
+                            >
+                                Register
+                            </a>
+                        </li>
+
+                        <!-- Login -->
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                href="{% url 'account_login' %}"
+                            >
+                                Login
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
+                
+                {% comment %} END UL CODE HERE {% endcomment %}
+                
                 <span class="navbar-text text-muted">
                     For getting Sh*t done
                 </span>
