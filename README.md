@@ -242,6 +242,8 @@ Exported files include at minimum: task title, status, category, and due date (i
 
 </details>
 
++++ADD KNOWN ISSUES SECTION FROM TESTING+++
+
 ---
 
 # 5. Deployment
@@ -422,28 +424,98 @@ Manual testing was carried out to verify that the core Create, Read, Update, and
 
 </details>
 
+<details>
+<summary><strong>Manual Testing (Heroku)</strong></summary>
+
+Manual testing was carried out on the deployed Heroku version to confirm the core CRUD flows, authentication redirects, and expected behaviour for logged-in vs logged-out users.
+
+| ID | Feature | Scenario / User Action | Expected Result | Outcome | Evidence (Screenshot) |
+|---:|---------|------------------------|-----------------|---------|-----------------------|
+| 1 | Create Task | Logged-in user clicks **New Task**, enters a title, and submits the form | User is redirected to Home and the new task appears in the list | ✅ Pass | ![Create Task Test](static/images/manualtest-heroku-create-task.png) |
+| 2 | Read Tasks | Logged-in user views the Home page | Only tasks belonging to the logged-in user are displayed | ✅ Pass | ![Read Tasks Test](static/images/manualtest-heroku-read-tasks.png) |
+| 3 | Update Task | Logged-in user enters Manage mode, edits a task, and saves changes | User is redirected to Home, task title is updated, no duplicate created | ✅ Pass | ![Update Tasks Test](static/images/manualtest-heroku-update-task.png) |
+| 4 | Delete Task | Logged-in user deletes a task via the confirmation modal | Task is removed from the list, no errors shown, other tasks unaffected | ✅ Pass | ![Delete Tasks Test](static/images/manualtest-heroku-delete-task.png) |
+| 5 | Done State | Logged-in user marks a task as Done | Task moves to the bottom of the list, Done state shown as disabled and styled | ✅ Pass | ![Done State Test](static/images/manualtest-heroku-done-state.png) |
+| 6 | Logout | Logged-in user clicks Logout | User is logged out, redirected to Home, task list hidden | ✅ Pass | ![Logout Test](static/images/manualtest-heroku-logout.png) |
+| 7 | Access Control | Logged-out user attempts to add, edit, or delete tasks | User is redirected to Login page, no data manipulation possible | ✅ Pass | ![Access Control Test](static/images/manualtest-heroku-access-control.png) |
+| 8 | Pagination | Logged-in user navigates task list using pagination controls | Tasks paginate correctly, navigation works, buttons disabled when unavailable | ✅ Pass | ![Pagination Test](static/images/manualtest-heroku-pagination.png) |
 </details>
 
 ---
 
 # 7. AI Implementation
 
+
+<details>
+<summary><strong>AI Usage and Implementation</strong></summary>
+## **AI Usage and Implementation**
+
+Throughout this project I used AI tools — primarily **ChatGPT** and **GitHub Copilot** — as *learning assistants* rather than generators of complete solutions. As someone who began this course with no prior coding experience, AI acted as a **coach**, helping me understand Django patterns, fix syntax issues, and correctly adapt examples from the LMS and Codestar walkthrough.
+
+### **How AI Was Used**
+</details>
+
+
+
 <details>
 <summary><strong>Code Creation</strong></summary>
-*(AI - write boilerplate code)*  
+
+#### **Code Creation & Boilerplate Support**
+AI assisted with:
+- outlining small boilerplate snippets (views, URLs, template placeholders)  
+- explaining Django syntax and patterns  
+- helping me adapt Codestar/LMS examples for my own project  
+
+All final code — models, CRUD logic, templates, authentication flows — was written and integrated manually by me.
+
 </details>
 
 <details>
 <summary><strong>Debugging</strong></summary>
-*(AI - fix issues)*  
+#### **Debugging & Troubleshooting**
+AI helped when:
+- migrations failed  
+- Heroku deploys produced errors  
+- Django raised template, view, or URL errors  
+- exceptions appeared such as `DoesNotExist`, `NoReverseMatch`, `AnonymousUser`, etc.  
+
+AI explained errors and offered possible fixes, but I implemented and validated every change myself.
+
 </details>
 
 <details>
-<summary><strong>Development Process</strong></summary>
-*(AI improved efficiency + workflow)*  
+<summary><strong>Architecture & Structure Guidance</strong></summary>
+#### **Architecture & Structure Guidance**
+AI supported my understanding of:
+- Django class-based and function-based views  
+- the structure of CRUD actions  
+- adapting Edit/Update/Delete flows from the LMS  
+- building the “mode=read/manage” interface logic  
+
+AI provided conceptual clarity — the implementation was my own.
 </details>
 
+
+<details>
+<summary><strong>Workflow & Productivity</strong></summary>
+#### **Workflow & Productivity**
+AI improved my workflow by:
+- helping me break tasks into smaller steps  
+- summarising completed work  
+- drafting checklists and testing plans  
+- keeping my code aligned with Codestar-style structure  
+
+This allowed me to stay organised while still learning core concepts from scratch.
+ 
+</details>
+
+
 ---
+
+
+# 8. Database
+
+## 8. Database
 
 ### ERD (Entity Relationship Diagram)
 
