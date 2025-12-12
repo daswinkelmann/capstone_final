@@ -26,6 +26,17 @@ Doodoo is a simple, mobile-first personal task manager built to demonstrate core
 
 # 1. Overview
 
+## Links
+
+### Heroku deployemnt
+https://capstonefinal-f47a7ff1f780.herokuapp.com/
+
+### GitHub
+https://github.com/daswinkelmann/capstone_final
+
+### Kanban
+https://github.com/users/daswinkelmann/projects/4
+
 <details>
 <summary><strong>Project Scope</strong></summary>
 
