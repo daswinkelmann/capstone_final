@@ -565,18 +565,18 @@ Manual testing was carried out on the deployed Heroku version to confirm the cor
 
 <details>
 <summary><strong>AI Usage and Implementation</strong></summary>
-## **AI Usage and Implementation**
+## AI Usage and Implementation
 
 Throughout this project I used AI tools — primarily **ChatGPT** and **GitHub Copilot** — as _learning assistants_ rather than generators of complete solutions. As someone who began this course with no prior coding experience, AI acted as a **coach**, helping me understand Django patterns, fix syntax issues, and correctly adapt examples from the LMS and Codestar walkthrough.
 
-### **How AI Was Used**
+### How AI Was Used
 
 </details>
 
 <details>
 <summary><strong>Code Creation</strong></summary>
 
-#### **Code Creation & Boilerplate Support**
+#### Code Creation & Boilerplate Support
 
 AI assisted with:
 
@@ -590,7 +590,7 @@ All final code — models, CRUD logic, templates, authentication flows — was w
 
 <details>
 <summary><strong>Debugging</strong></summary>
-#### **Debugging & Troubleshooting**
+#### Debugging & Troubleshooting
 AI helped when:
 - migrations failed  
 - Heroku deploys produced errors  
@@ -603,7 +603,7 @@ AI explained errors and offered possible fixes, but I implemented and validated 
 
 <details>
 <summary><strong>Architecture & Structure Guidance</strong></summary>
-#### **Architecture & Structure Guidance**
+#### Architecture & Structure Guidance
 AI supported my understanding of:
 - Django class-based and function-based views  
 - the structure of CRUD actions  
@@ -616,7 +616,7 @@ AI provided conceptual clarity — the implementation was my own.
 
 <details>
 <summary><strong>Workflow & Productivity</strong></summary>
-#### **Workflow & Productivity**
+#### Workflow & Productivity
 AI improved my workflow by:
 - helping me break tasks into smaller steps  
 - summarising completed work  
@@ -728,7 +728,7 @@ During production:
 
 <details>
 <summary><strong>Sources & Credits</strong></summary>
-## **References**
+## References
 
 Throughout the development of this project, I relied on a mixture of formal learning materials, tutor guidance, peer support, and external resources to deepen my understanding of Django, Python, and full-stack development concepts.
 
@@ -777,7 +777,7 @@ This combination of structured learning, community resources, and external refer
 
 <details>
 <summary><strong>Technologies and Tools</strong></summary>
-*Django, Python, Bootstrap, GitHub*
+Django, Python, Bootstrap, GitHub
 
 ### Languages & Core Technologies
 
@@ -824,7 +824,6 @@ This combination of structured learning, community resources, and external refer
 
 <details>
 <summary><strong>Key Learnings</strong></summary>
-## Learning Points
 
 This project marked a major step change in my understanding of full-stack development and highlighted how much practical learning happens through building a complete application from start to finish. Implementing full **CRUD functionality** transformed abstract concepts into concrete understanding, particularly how user actions flow through the system and affect stored data.
 
