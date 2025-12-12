@@ -373,7 +373,23 @@ Actual: As above (PASS)
 
 <details>
 <summary><strong>HTML Validation</strong></summary>
-*screenshots/results*  
+*screenshots/results* 
+
+The rendered HTML for all key pages (Home, Login, Signup, Add Task, Edit Task, and Manage Mode) was tested using the W3C HTML Validator. Errors identified during testing were fixed, and the final deployed version passes validation without critical errors.
+
+![HTML Validation – Home](static/images/html-validator-home.png)
+
+![HTML Validation – Login Page](static/images/html-validator-login.png)
+
+![Signup HTML Validation](static/images/html-validator-signup.png)
+
+![Add Task HTML Validation](static/images/html-validator-add-task.png)
+
+![Edit Task HTML Validation](static/images/html-validator-edit-task.png)
+
+![Home (Manage Mode) HTML Validation](static/images/html-validator-home-manage.png)
+
+
 </details>
 
 <details>

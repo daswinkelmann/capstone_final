@@ -1,14 +1,10 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container mt-4">
     <h2 class="mb-3">Register for Doodoo</h2>
 
     <div class="auth-card">
         <form method="post" action="{% url 'account_signup' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-
+            {% csrf_token %} {{ form.as_div }}
             <button type="submit" class="btn btn-primary">Sign up</button>
         </form>
     </div>
