@@ -43,7 +43,6 @@ Doodoo is simple by design — a clean UI, essential features, and a learning-fo
 
 # 2. Agile Mehodology Process
 
-
 <details>
 <summary><strong>Agile Approach & Project Board</strong></summary>
 
@@ -54,8 +53,8 @@ You can view the full project board here:
 👉 **GitHub Kanban Board:** https://github.com/users/daswinkelmann/projects/4
 
 The board contains all Must/Should/Could tasks, their current status, and a clear record of how the project moved from planning → MVP → refinement.
-</details>
 
+</details>
 
 <details>
 <summary><strong>MoSCoW Prioritisation</strong></summary>
@@ -67,8 +66,8 @@ On my project board, I used the MoSCoW method to keep things simple and focused:
 **Should haves** — Valuable additions that improve the product but aren’t strictly required for the MVP. These only begin once all Musts are complete.
 
 **Could haves** — Nice extras. These aren’t critical, but they would enhance the overall experience if time allows. Only tackled after both Musts and Shoulds are finished.
-</details>
 
+</details>
 
 <details>
 <summary><strong>User Stories</strong></summary>
@@ -582,17 +581,12 @@ This allowed me to stay organised while still learning core concepts from scratc
 
 # 8. Database
 
-
-
 <details>
 <summary><strong>ERD (Entity Relationship Diagram)</strong></summary>
 
 The Doodoo Task Manager uses a very simple relational database structure, designed to keep the project lightweight and focused on delivering core CRUD functionality. Below is the ERD that represents the relationships between the main models in the system.
 
 _INSERT ERD IMAGE HERE_
-
-<details>
-<summary><strong>ASCII ERD – Doodoo Task Manager</strong></summary>
 
 ```text
 +-------------------------+          1 ──────── *        +-------------------------+
@@ -610,13 +604,13 @@ Relationship:
 - Each Task belongs to exactly one User.
 </details>
 ```
+
 </details>
 
-
 ---
+
 <details>
 <summary><strong>Main Tables / Models</strong></summary>
-
 
 #### **User**
 
@@ -661,7 +655,6 @@ This relationship ensures:
 
 <details>
 <summary><strong>Database Engines</strong></summary>
-
 
 During development:
 
@@ -781,5 +774,14 @@ This combination of structured learning, community resources, and external refer
 
 <details>
 <summary><strong>Key Learnings</strong></summary>
-*What you learned throughout the project*  
+## Learning Points
+
+This project marked a major step change in my understanding of full-stack development and highlighted how much practical learning happens through building a complete application from start to finish. Implementing full **CRUD functionality** transformed abstract concepts into concrete understanding, particularly how user actions flow through the system and affect stored data.
+
+Learning Django’s **Model–View–Template (MVT)** structure was one of the steepest challenges of the project. Initially, it was difficult to understand where logic should live and how different components interacted. Over time, this structure became clearer, and I gained a much stronger appreciation for the separation between **frontend presentation and backend logic**. This distinction has significantly improved how I now approach problem-solving and feature design.
+
+Working across **multiple languages within one project**—Python, HTML, CSS, and JavaScript—reinforced how each layer contributes to the overall application. Seeing these technologies interact in real time helped clarify their individual responsibilities and limitations.
+
+Overall, the project involved a very steep learning curve, particularly when combining unfamiliar technologies. However, learning how to effectively use support resources such as documentation, tutorials, YouTube walkthroughs, and AI-assisted tools proved just as valuable as the technical skills themselves. Developing confidence in researching, troubleshooting, and iterating independently is one of the most important outcomes of this project.
+
 </details>
