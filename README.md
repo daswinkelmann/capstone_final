@@ -809,12 +809,6 @@ Django, Python, Bootstrap, GitHub
 -   **Browser DevTools** – Inspecting layout, debugging CSS/JS, and testing mobile responsiveness.
 -   **AI Tools (ChatGPT & GitHub Copilot)** – Assisted with code syntax, debugging, and adapting LMS patterns.
 
-### Additional Utilities (Optional / Add Later)
-
--   **ADD IMAGE COMPRESSION TOOL NAME IF USED**
--   **ADD PWA TESTING TOOL WHEN SERVICE WORKER IS IMPLEMENTED**
--   **ADD ANY CSS FRAMEWORK EXTENSIONS IF USED DURING STYLING**
--   **ADD ACCESSIBILITY OR LINTING TOOLS IF ADDED LATER**
 
 </details>
 
