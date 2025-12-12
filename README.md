@@ -4,19 +4,23 @@
 
 _Doodoo – Personal Task Tracker_
 
+Doodoo is a simple, mobile-first personal task manager built to demonstrate core CRUD functionality using Django. Designed as a focused learning project, it allows a single authenticated user to create, view, update, complete, and delete tasks, following patterns adapted from the Code Institute LMS and Codestar Blog walkthrough.
+
 ## Index
 
-1. Overview
-2. Agile Development Process
-3. Features
-4. Improvements and Future Development
-5. Deployment
-6. Testing and Validation
-7. AI Implementation
-8. Database
-9. References
-10. Tech Used
-11. Learning Points
+## Contents
+
+1. [Overview](#1-overview)
+2. [Agile Development Process](#2-agile-mehodology-process)
+3. [Features](#3-features)
+4. [Improvements and Future Development](#4-improvements-and-future-development)
+5. [Deployment](#5-deployment)
+6. [Testing and Validation](#6-testing-and-validation)
+7. [AI Implementation](#7-ai-implementation)
+8. [Database](#8-database)
+9. [References](#9-references)
+10. [Tech Used](#10-tech-used)
+11. [Learning Points](#11-learning-points)
 
 ---
 
@@ -246,7 +250,42 @@ Exported files include at minimum: task title, status, category, and due date (i
 
 </details>
 
-+++ADD KNOWN ISSUES SECTION FROM TESTING+++
+<details>
+<summary><strong>Known Issues from testing and dev</strong></summary>
+
+## Known Issues & Future Enhancements
+
+The following items were identified during testing and peer review. They are non-blocking for the MVP but represent areas for UX improvement and feature refinement in future iterations.
+
+### Known Issues (From Testing)
+
+-   There is no clear way to **exit Manage Mode** without performing an edit or delete action.
+-   Completed (**DONE**) tasks do not always display with the **most recently completed task at the top** of the completed list.
+-   The number of visible tasks does not dynamically adapt to the available vertical space between the fixed header and footer.
+-   When no tasks exist, the app does not display a friendly empty-state message (e.g. _“You have nothing to do — relax and breathe”_).
+-   On the Login page:
+    -   “Register now” appears underlined and blue, which conflicts with the intended visual style.
+    -   “Forgot password” appears inline and underlined instead of on its own line.
+-   When opening **Add Task**, the cursor is not automatically focused in the text field.
+-   On mobile devices, the keyboard does not auto-open when adding a new task, creating minor UX friction.
+-   Task timestamps currently include time values; future versions should show either:
+    -   date created, or
+    -   date completed,  
+        without time (time was retained during development for debugging clarity).
+
+### Planned UX & Feature Enhancements
+
+-   Add ghosted placeholder suggestions when creating a new task (e.g. _“Drink water”_, _“Go for a walk”_).
+-   Add pagination indicators (dots) in the footer to clearly show how many pages of tasks exist.
+-   Introduce an **About / Settings** page for app information and future preferences.
+-   Improve scrolling behaviour so tasks scroll cleanly behind the fixed header and footer.
+-   Enable full-screen, app-like behaviour to minimise browser UI where supported (PWA enhancement).
+-   Display a friendly message when users are logged out (e.g. _“Sign in to make some doodoos”_).
+-   Centre supporting text on Login and Register pages to match the Add Task layout.
+
+These improvements were consciously scoped out of the MVP in order to prioritise core CRUD functionality, Django fundamentals, and project stability within the available timeframe.
+
+</details>
 
 ---
 
