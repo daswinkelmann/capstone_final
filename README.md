@@ -343,33 +343,7 @@ After deployment, I verified:
 
 # 6. Testing and Validation
 
-Testing on initial Heroku deployment (CR steps complete)
-Run tests on initial Heroku deployment
-1
-Home page loads for logged-out user
-Steps: Open URL as a logged-out user
-Expected: Page loads, navbar and footer display, tasks display
-Actual: As above (PASS)
-2
-Add Task redirects logged-out user to log in
-Steps: While logged out, go to /add
-Expected: Redirect to admin/login page, no Add Task screen until user is logged in
-Actual: As above (PASS)
-3
-Admin login works with superuser credentials
-Steps: Go to /admin/login and enter superuser username and password
-Expected: Login succeeds and user is taken to admin dashboard or redirected to intended page
-Actual: As above (PASS)
-4
-Add Task form creates a task when logged in
-Steps: Log in, visit /add, enter a valid title, click Save
-Expected: No errors, redirected to home, new task appears in list
-Actual: As above (PASS)
-5
-Add Task validation error for missing title
-Steps: While logged in, visit /add, submit empty form
-Expected: Remain on form page, validation error shown, no task created
-Actual: As above (PASS)
+
 
 <details>
 <summary><strong>HTML Validation</strong></summary>
@@ -394,7 +368,13 @@ The rendered HTML for all key pages (Home, Login, Signup, Add Task, Edit Task, a
 
 <details>
 <summary><strong>CSS Validation</strong></summary>
-*screenshots/results*  
+*screenshots/results* 
+CSS styling was validated using the W3C Jigsaw CSS Validator on the deployed Heroku application. No critical errors were found.
+
+![CSS Validation – No Errors Found](static/images/css-validator-heroku.png)
+
+**Result:** Congratulations! No Error Found.
+
 </details>
 
 <details>
@@ -409,7 +389,23 @@ The rendered HTML for all key pages (Home, Login, Signup, Add Task, Edit Task, a
 
 <details>
 <summary><strong>Lighthouse</strong></summary>
-*(performance score screenshots)*  
+*(performance score screenshots)* 
+
+Lighthouse testing confirms that the application performs well across both mobile and desktop devices, with strong performance, SEO, and best-practice scores on the deployed Heroku environment.
+
+### Lighthouse Testing – Mobile
+
+![Lighthouse Mobile Report A](static/images/lighthouse-mobileA.png)
+
+![Lighthouse Mobile Report B](static/images/lighthouse-mobileB.png)
+
+
+### Lighthouse Testing – Desktop
+
+![Lighthouse Desktop Report A](static/images/lighthouse-laptopA.png)
+
+![Lighthouse Desktop Report B](static/images/lighthouse-laptopB.png)
+
 </details>
 
 <details>
