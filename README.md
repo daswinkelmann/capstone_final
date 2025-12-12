@@ -7,7 +7,7 @@ _Doodoo – Personal Task Tracker_
 ## Index
 
 1. Overview
-2. UX Design Process
+2. Agile Development Process
 3. Features
 4. Improvements and Future Development
 5. Deployment
@@ -99,13 +99,13 @@ _(wireframes or link to PDF)_
 
 **Mobile Wireframes**
 Note: this project is designed as a mobile first app. Desktop and tablet are nice to have, and the app will respond to these formats, but has been optimised for mobile portrait use.
-![alt text](<mobile wireframes.png>)
+![Mobile Wireframe](static/images/mobile wireframes.png)
 
 **Tablet Wireframes**
-![alt text](<iPad wireframes_V2.png>)
+![Tablet Wireframe](static/images/iPad wireframes_V2.png)
 
 **Desktop Wireframes**
-![alt text](<laptop wireframes_V2.png>)
+![Laptop Wireframe](static/images/laptop wireframes_V2.png)
 
 </details>
 
