@@ -25,6 +25,14 @@ body {
     filter: invert(1);
 }
 
+/* Primary CTA: New Task */
+.btn-new-task {
+    font-size: 1.05rem;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
 footer {
     background-color: #2f3136;
     color: #e9eef5;
