@@ -343,32 +343,32 @@ After deployment, I verified:
 
 # 6. Testing and Validation
 
-
-
 <details>
 <summary><strong>HTML Validation</strong></summary>
-*screenshots/results* 
-
 The rendered HTML for all key pages (Home, Login, Signup, Add Task, Edit Task, and Manage Mode) was tested using the W3C HTML Validator. Errors identified during testing were fixed, and the final deployed version passes validation without critical errors.
 
+html Validator Home
 ![HTML Validation – Home](static/images/html-validator-home.png)
 
+html Validator Login
 ![HTML Validation – Login Page](static/images/html-validator-login.png)
 
+html Validator Signup
 ![Signup HTML Validation](static/images/html-validator-signup.png)
 
+html Validator Add task
 ![Add Task HTML Validation](static/images/html-validator-add-task.png)
 
+html Validator Edit task
 ![Edit Task HTML Validation](static/images/html-validator-edit-task.png)
 
+html Validator Manage Tasks
 ![Home (Manage Mode) HTML Validation](static/images/html-validator-home-manage.png)
-
 
 </details>
 
 <details>
 <summary><strong>CSS Validation</strong></summary>
-*screenshots/results* 
 CSS styling was validated using the W3C Jigsaw CSS Validator on the deployed Heroku application. No critical errors were found.
 
 ![CSS Validation – No Errors Found](static/images/css-validator-heroku.png)
@@ -380,6 +380,29 @@ CSS styling was validated using the W3C Jigsaw CSS Validator on the deployed Her
 <details>
 <summary><strong>Python Validation</strong></summary>
 *(flake8, pep8, CI Python validator)*  
+
+#### PEP8 Validation – Views
+PEP8 CI was run on key Python files; only `E501 line too long` warnings remain (acceptable for Code Institute), with no functional issues.
+![PEP8 CI - views.py](static/images/pep8ci-views.png)
+
+#### PEP8 Validation – Models
+
+The `models.py` file was validated using the Code Institute PEP8 Python Validator. No errors or warnings were found, confirming full compliance with PEP8 standards.
+
+![PEP8 Models Validation](static/images/pep8-models-validation.png)
+
+### PEP8 Validation – forms.py
+
+The `forms.py` file was validated against PEP8 standards using the Code Institute PEP8 validator. No errors or warnings were found.
+
+![PEP8 Forms Validation](static/images/pep8-forms-validation.png)
+
+### PEP8 Validation – tests.py
+
+The `tests.py` file was checked for PEP8 compliance. The file contains the default Django test structure and produces no validation errors.
+
+![PEP8 Tests Validation](static/images/pep8-tests-validation.png)
+
 </details>
 
 <details>
@@ -389,8 +412,6 @@ CSS styling was validated using the W3C Jigsaw CSS Validator on the deployed Her
 
 <details>
 <summary><strong>Lighthouse</strong></summary>
-*(performance score screenshots)* 
-
 Lighthouse testing confirms that the application performs well across both mobile and desktop devices, with strong performance, SEO, and best-practice scores on the deployed Heroku environment.
 
 ### Lighthouse Testing – Mobile
@@ -398,7 +419,6 @@ Lighthouse testing confirms that the application performs well across both mobil
 ![Lighthouse Mobile Report A](static/images/lighthouse-mobileA.png)
 
 ![Lighthouse Mobile Report B](static/images/lighthouse-mobileB.png)
-
 
 ### Lighthouse Testing – Desktop
 

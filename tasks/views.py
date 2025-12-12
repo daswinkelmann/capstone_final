@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from django.contrib.auth.decorators import login_required
 from .models import Task
 from .forms import TaskForm
 
 # Create your views here.
+
+
 class TaskList(generic.ListView):
     # model = Task
     # queryset = Task.objects.all()
@@ -13,13 +14,6 @@ class TaskList(generic.ListView):
     context_object_name = "task_list"
     paginate_by = 4
     # ordering = ['-created_at']
-
-    # ORIGINAL TASKLIST QUERYSET
-    # def get_queryset(self):
-    #     # return Task.objects.filter(status="TODO").order_by("created_at")
-    #     todos = Task.objects.filter(user=self.request.user, status="TODO").order_by("-created_at")
-    #     dones = Task.objects.filter(user=self.request.user, status="DONE").order_by("-created_at")
-    #     return list(todos) + list(dones)
 
     def get_queryset(self):
         user = self.request.user
@@ -31,16 +25,12 @@ class TaskList(generic.ListView):
         dones = Task.objects.filter(user=user, status="DONE").order_by("-created_at")
         return list(todos) + list(dones)
 
-
-
-
-# ===========================
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mode = self.request.GET.get("mode", "read")  # "read" or "manage"
         context["mode"] = mode
         return context
+
 
 @login_required
 def add_task(request):
@@ -51,7 +41,7 @@ def add_task(request):
             task.user = request.user
             task.save()
             return redirect("home")
-    else:    
+    else:
         form = TaskForm()
 
     return render(request, "tasks/add_task.html", {"form": form})
@@ -64,10 +54,11 @@ def task_done(request, pk):
     task.save()
     return redirect("home")
 
+
 @login_required
 def edit_task(request, pk):
     task = get_object_or_404(Task, pk=pk, user=request.user)
-   
+
     if request.method == "POST":
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
@@ -80,11 +71,9 @@ def edit_task(request, pk):
 
     return render(request, "tasks/edit_task.html", {"form": form})
 
+
 @login_required
 def delete_task(request, pk):
     task = get_object_or_404(Task, pk=pk, user=request.user)
     task.delete()
     return redirect("home")
-    
-    # First visit (GET): show confirmation page
-    return render(request, "tasks/delete_task.html", {"task": task})
