@@ -379,9 +379,10 @@ CSS styling was validated using the W3C Jigsaw CSS Validator on the deployed Her
 
 <details>
 <summary><strong>Python Validation</strong></summary>
-*(flake8, pep8, CI Python validator)*  
+pep8, CI Python validator
 
 #### PEP8 Validation – Views
+
 PEP8 CI was run on key Python files; only `E501 line too long` warnings remain (acceptable for Code Institute), with no functional issues.
 ![PEP8 CI - views.py](static/images/pep8ci-views.png)
 
@@ -407,7 +408,15 @@ The `tests.py` file was checked for PEP8 compliance. The file contains the defau
 
 <details>
 <summary><strong>JavaScript Validation</strong></summary>
-*(JS used)*  
+JS Hint used
+
+### JavaScript Validation
+
+Custom JavaScript was validated using JSHint. The validation returned no errors.  
+Warnings relate to the use of modern ES6+ syntax (`const`, `let`, arrow functions, template literals) and the Bootstrap object being loaded globally via CDN. These warnings are expected and do not affect functionality.
+
+![JavaScript Validation](static/images/js-validator-tasks.png)
+
 </details>
 
 <details>
@@ -430,7 +439,29 @@ Lighthouse testing confirms that the application performs well across both mobil
 
 <details>
 <summary><strong>Wave (Accessibility)</strong></summary>
-*(accessibility results)*  
+
+### Accessibility Testing (WAVE)
+
+Accessibility testing was carried out using the WAVE Web Accessibility Evaluation Tool on the deployed Heroku application.
+
+The Login page returned a small number of errors and alerts, primarily related to icon-only buttons, contrast warnings on secondary UI elements, and heading structure. Core accessibility requirements such as form labels, keyboard navigation, and authentication flows were verified and function correctly.
+
+These issues were assessed as non-blocking and documented for future improvement, with priority given to core usability and CRUD functionality within the project timeframe.
+
+![WAVE Login Page Results](static/images/wave-login-page.png)
+
+The Home page was also tested using the WAVE tool. A small number of errors and alerts were identified, primarily related to icon-only pagination controls and heading hierarchy. These elements are secondary UI controls and do not affect core task management functionality.
+
+All primary content, buttons, and forms remain accessible, keyboard-navigable, and clearly labelled. The issues identified are documented for future enhancement.
+
+![WAVE Home Page Results](static/images/wave-home-page.png)
+
+The Register page was evaluated using the WAVE accessibility tool. A small number of errors and alerts were identified, primarily related to icon-only buttons and heading hierarchy. These issues do not affect form usability or completion.
+
+All form fields are correctly labelled, keyboard accessible, and provide clear guidance to users. The identified items have been documented for future refinement.
+
+![WAVE Register Page Results](static/images/wave-register-page.png)
+
 </details>
 
 <details>
