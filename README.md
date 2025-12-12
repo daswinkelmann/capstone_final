@@ -43,7 +43,9 @@ Doodoo is simple by design — a clean UI, essential features, and a learning-fo
 
 # 2. Agile Mehodology Process
 
-### Agile Approach & Project Board
+
+<details>
+<summary><strong>Agile Approach & Project Board</strong></summary>
 
 This project was developed using an Agile-inspired workflow, following short iterative cycles and continuously refining features as the app evolved.  
 To keep everything organised, I used a GitHub Kanban board to track user stories, prioritise tasks using the MoSCoW method, and monitor progress throughout development.
@@ -52,8 +54,11 @@ You can view the full project board here:
 👉 **GitHub Kanban Board:** https://github.com/users/daswinkelmann/projects/4
 
 The board contains all Must/Should/Could tasks, their current status, and a clear record of how the project moved from planning → MVP → refinement.
+</details>
 
-### MoSCoW Prioritisation
+
+<details>
+<summary><strong>MoSCoW Prioritisation</strong></summary>
 
 On my project board, I used the MoSCoW method to keep things simple and focused:
 
@@ -62,6 +67,8 @@ On my project board, I used the MoSCoW method to keep things simple and focused:
 **Should haves** — Valuable additions that improve the product but aren’t strictly required for the MVP. These only begin once all Musts are complete.
 
 **Could haves** — Nice extras. These aren’t critical, but they would enhance the overall experience if time allows. Only tackled after both Musts and Shoulds are finished.
+</details>
+
 
 <details>
 <summary><strong>User Stories</strong></summary>
@@ -575,9 +582,10 @@ This allowed me to stay organised while still learning core concepts from scratc
 
 # 8. Database
 
-## 8. Database
 
-### ERD (Entity Relationship Diagram)
+
+<details>
+<summary><strong>ERD (Entity Relationship Diagram)</strong></summary>
 
 The Doodoo Task Manager uses a very simple relational database structure, designed to keep the project lightweight and focused on delivering core CRUD functionality. Below is the ERD that represents the relationships between the main models in the system.
 
@@ -602,10 +610,13 @@ Relationship:
 - Each Task belongs to exactly one User.
 </details>
 ```
+</details>
+
 
 ---
+<details>
+<summary><strong>Main Tables / Models</strong></summary>
 
-### Main Tables / Models
 
 #### **User**
 
@@ -644,9 +655,13 @@ This relationship ensures:
 -   Logging out prevents access to any task data.
 -   Any CRUD operation (create, edit, delete, mark done) is always scoped to the currently logged-in user.
 
+</details>
+
 ---
 
-### Database Engines
+<details>
+<summary><strong>Database Engines</strong></summary>
+
 
 During development:
 
@@ -662,6 +677,7 @@ During production:
 
 -   The ERD was kept intentionally simple to match the scope of the project.
 -   Future versions (described in the “Future Features” section) could extend the database to support categories, reminders, due dates, PWA syncing, etc.
+</details>
 
 ---
 
