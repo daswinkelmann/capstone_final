@@ -61,7 +61,7 @@
         </div>
         <!-- closes outer row -->
 
-        {% if is_paginated %}
+        {% comment %} {% if is_paginated %}
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 {% if page_obj.has_next %}
@@ -76,15 +76,17 @@
                 {% endif %}
             </ul>
         </nav>
-        {% endif %}
-        <div class="bottom-actions">
+        {% endif %} {% endcomment %}
+
+
+        {% comment %} <div class="bottom-actions">
             <a href="?mode=manage" class="btn btn-outline-secondary btn-lg"
                 >Edit</a
             >
             <a href="?mode=manage" class="btn btn-outline-danger btn-lg"
                 >Delete</a
             >
-        </div>
+        </div> {% endcomment %}
     </div>
 
     <!-- Delete confirmation modal -->

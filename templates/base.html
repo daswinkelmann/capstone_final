@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
     <head>
-        <title>CodeStar Blog</title>
+        <title>Doodoo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+        
         <!-- Google Fonts CSS -->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -99,16 +101,47 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer mt-auto py-3">
-            <p class="m-0 text-center text-white">
-                Doodoo - organise your life!
-            </p>
-            <p class="m-0 text-center text-white">
-                Follow us: <i class="fab fa-facebook-square ms-3"></i>
-                <i class="fab fa-twitter-square ms-3"></i>
-                <i class="fab fa-instagram-square ms-3"></i>
-                <i class="fab fa-youtube-square ms-3"></i>
-            </p>
+        <footer class="footer app-footer mt-auto py-3">
+            <div class="container-fluid">
+                <div class="footer-bar">
+                
+                    <!-- Left: Prev -->
+            {% if is_paginated and page_obj.has_previous %}
+                <a class="btn btn-circle btn-pagination"
+                   href="?page={{ page_obj.previous_page_number }}&mode={{ mode }}">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+            {% else %}
+                <button class="btn btn-circle btn-pagination" disabled>
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+            {% endif %}
+
+
+                    <!-- Centre: Edit / Delete (mode toggle) -->
+            <div class="footer-actions d-flex gap-3">
+                {% if mode == "manage" %}
+                    <button class="btn btn-warning btn-lg" disabled>Edit</button>
+                    <button class="btn btn-danger btn-lg" disabled>Delete</button>
+                {% else %}
+                    <a class="btn btn-warning btn-lg" href="?mode=manage">Edit</a>
+                    <a class="btn btn-danger btn-lg" href="?mode=manage">Delete</a>
+                {% endif %}
+            </div>
+                    <!-- Right: Next -->
+            {% if is_paginated and page_obj.has_next %}
+                <a class="btn btn-circle btn-pagination"
+                   href="?page={{ page_obj.next_page_number }}&mode={{ mode }}">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            {% else %}
+                <button class="btn btn-circle btn-pagination" disabled>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            {% endif %}
+
+                </div>
+            </div>
         </footer>
 
         <script

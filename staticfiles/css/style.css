@@ -25,6 +25,14 @@ body {
     filter: invert(1);
 }
 
+/* Primary CTA: New Task */
+.btn-new-task {
+    font-size: 1.05rem;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
 footer {
     background-color: #2f3136;
     color: #e9eef5;
@@ -141,6 +149,131 @@ footer {
 .modal-body {
     color: #2e2e2e;
 }
+
+/* footer */
+
+.app-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1030;
+    background: #2f3136;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-footer {
+    min-width: 110px;
+    font-weight: 700;
+}
+
+.footer-nav {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.6rem;
+    color: #e9eef5;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footer-nav.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* footer pagination */
+/* footer pagination */
+
+.footer-pager {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* ACTIVE pagination buttons */
+.pager-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e5e7eb; /* pale grey */
+    border: 1px solid #d1d5db;
+
+    color: #374151; /* dark grey chevron */
+    text-decoration: none;
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pager-btn i {
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+/* Hover / focus */
+.pager-btn:hover,
+.pager-btn:focus-visible {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+}
+
+/* DISABLED pagination buttons */
+.pager-btn.is-disabled {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.35);
+
+    box-shadow: none;
+    pointer-events: none;
+}
+
+
+.btn-circle.btn-pagination {
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #e9eef5;
+
+    font-size: 1.6rem;
+}
+
+.btn-circle.btn-pagination i {
+    color: #e9eef5;
+}
+
+.btn-circle.btn-pagination:disabled {
+    opacity: 0.35;
+}
+
+
+
 
 /* button states */
 
