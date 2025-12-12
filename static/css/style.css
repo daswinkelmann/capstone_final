@@ -105,6 +105,22 @@ footer {
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+/* DONE task pill */
+.task-card.is-done {
+    background: #c5cbd2;
+    border-color: #ced4da;
+}
+
+.task-card.is-done .task-title {
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+.task-card.is-done .task-date {
+    color: #9aa0a6;
+}
+
+
 .task-card .card-body {
     padding: 1.25rem 1.5rem;
 }
@@ -307,6 +323,15 @@ footer {
     transform: translateY(1px);
 }
 
+/* Disabled DONE button */
+.btn-done-disabled {
+    background-color: #9aa0a6;
+    color: #2f3136;
+    border: none;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
 .btn-edit-icon {
     background: #fbbf24;
     border-color: #fbbf24;
@@ -346,6 +371,8 @@ footer {
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
     outline: black;
 }
+
+
 
 /* Edit/delete button */
 
